@@ -22,7 +22,7 @@ app.post("/", async (req, res) => {
 app.get("/:index?", async (req, res) => {
   try {
     if (req.params.index !== undefined) {
-      singlePerson = await pool.query("SELECT *, to_char(person_date, 'yyyy-MM-dd') as person_date FROM people WHERE person_id = $1", [
+      let singlePerson = await pool.query("SELECT *, to_char(person_date, 'yyyy-MM-dd') as person_date FROM people WHERE person_id = $1", [
         req.params.index
       ]);
       console.log(req.params.index)
