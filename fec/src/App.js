@@ -1,5 +1,8 @@
 import logo from './logo.svg';
+import React, {Fragment} from 'react';
 import './App.css';
+import ListItem from './getData';
+
 
 function App() {
   return (
@@ -9,14 +12,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello World!
-        </a>
+       <Fragment>
+         <ListItem></ListItem>
+
+       </Fragment>
       </header>
     </div>
   );
