@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from "react";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+
+
 const ListItem = () => {
     const [item, setItem] = useState([])
   const getItem = async () => {
@@ -21,13 +26,14 @@ const ListItem = () => {
     <main>
       Item
       {item.map((e) => (
-        <form key={e.person_id}>
+        <form key={e.id}>
         <section>
-            {e.person_name}
+            {e.review_title}
+            <Button color="danger">Danger!</Button>
           
         </section>
         <section>
-        {e.person_date}
+        
         </section>
 
         
