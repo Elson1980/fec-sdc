@@ -214,6 +214,7 @@ ul {
  margin-right: .25rem;
  }
  .rating {
+   
 
  }
  .userStar{
@@ -271,3 +272,30 @@ flex-direction: row;
   border: 1px solid red;
   
  }
+ .overview > div{
+   margin-top: 1rem;
+ }
+
+ .stars-outer {
+  display: inline-block;
+  position: relative;
+ 
+}
+ 
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+ 
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 20;
+}
+ 
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
+}
