@@ -3,7 +3,8 @@ import React, { Fragment } from "react";
 import "./App.css";
 import { ListItem, escapedData } from "./getData";
 import { Col, Row, Progress } from "reactstrap";
-import TestItem from "./ratingSnapshot";
+import RatingSnapshot from "./ratingSnapshot";
+import ReviewBody from "./reviewBody";
 
 function App() {
   return (
@@ -105,39 +106,9 @@ function App() {
         </button>
         <button>Clear Alls</button>
       </div>
-      <div className="userStar">
-        <div>***</div>
-        <div>Kuya</div>
-        <div> A month ago</div>
-      </div>
-      <div className="centralReview">
-        <div>
-          Size and Weight
-          <div>this is a description</div>
-          <div>Yes, recommend this product</div>
-          <section>
-            Helpful?
-            <button>Yes</button>
-            <button>No</button>
-            <button>Report</button>
-          </section>
-        </div>
-
-        <div>
-          Quality of Product
-          <div>
-            <Progress value={100} style={{ width: "100px" }}></Progress>
-          </div>
-          <div>
-            Value of Product
-            <div>
-              <Progress value={100} style={{ width: "100px" }}></Progress>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ListItem></ListItem>
-      <TestItem></TestItem>
+      
+      <ReviewBody></ReviewBody>
+      <RatingSnapshot></RatingSnapshot>
       {console.log(escapedData, "in the app")}
     </Fragment>
   );

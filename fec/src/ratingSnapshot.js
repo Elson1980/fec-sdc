@@ -9,7 +9,7 @@ import { ListItem } from "./getData";
 
 
 
-const TestItem = () => {
+const RatingSnapshot = () => {
     const [item, setItem] = useState([])
   const getItem = async () => {
     try {
@@ -164,4 +164,4 @@ const clickTest = () => {
 
   );
 };
-export default TestItem;
+export default RatingSnapshot;

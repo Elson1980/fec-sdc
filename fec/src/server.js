@@ -67,3 +67,21 @@ app.delete("/:index", async (req, res) => {
 app.listen(3001, () => {
   console.log("server started on 3001");
 });
+
+
+app.get("/a/:index?", async (req, res) => {
+  try {
+    console.log(req.params)
+    if (req.params.index !== undefined) {
+      let singleReview = await pool.query("SELECT author_name FROM author WHERE author_id = $1" , [
+        req.params.index
+      ]);
+      console.log(req.params.index)
+      console.log(singleReview.rows)
+      res.json(singleReview.rows);
+    }
+  
+} catch (err) {
+  console.log(err.message);
+}
+    })
