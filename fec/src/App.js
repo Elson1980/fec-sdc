@@ -1,22 +1,22 @@
-import logo from './logo.svg';
 import React, {Fragment} from 'react';
 import './App.css';
-import ListItem from './getData';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import GetTabs from './tabs';
+import Footer from './footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <header className="App-header">        
+
        <Fragment>
-         <ListItem></ListItem>
+          
+          <GetTabs></GetTabs>         
 
        </Fragment>
+                       
       </header>
+      <Footer></Footer>
     </div>
   );
 }

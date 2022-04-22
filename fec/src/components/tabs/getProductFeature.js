@@ -1,8 +1,4 @@
 import React, { Component, useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import GetTabs from "./tabs";
-import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const ListFeatures = () => {
   

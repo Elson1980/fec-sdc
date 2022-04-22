@@ -5,7 +5,7 @@ const ListItem = () => {
     try {
       const response = await fetch("http://localhost:3001");
       const jsonData = await response.json();
-      console.log(jsonData);
+      // console.log(jsonData);
       setItem(jsonData)
     } catch (err) {
       console.log(err.message);
