@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 const DropDown = (props) =>{
     const { parentMenuId, 
@@ -13,9 +14,11 @@ const DropDown = (props) =>{
             setLastMenuName,
             lastMenu,
             lastMenuId,
-            lastMenuName
+            lastMenuName,
+            open
         } = props;
-    
+        
+if(open === true){
 if(currentMenu === 'menu1'){
     return (
         <>
@@ -64,6 +67,7 @@ if(currentMenu === 'menu1'){
             </div>
         </>
     )
+}
 }
 
 }

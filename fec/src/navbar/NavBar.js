@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DropDown from './Dropdown';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Dropdown } from 'reactstrap'
+
 
 const NavBar = () =>{
     const [categories, setCat] = useState([]);
@@ -11,8 +12,7 @@ const NavBar = () =>{
     const [parentMenuName, setParentMenuName] = useState('');
     const [lastMenu, setLastMenu] = useState('');
     const [lastCatId, setLastCatId] = useState(1);
-    
-
+    const [open, setOpen] = useState(false)
 
     const getMainMenu = async () => {
         try {
@@ -72,17 +72,11 @@ const NavBar = () =>{
         console.log('lastMenu:' , lastMenu)
         console.log('goBack: lastMenuName: ', lastMenuName)
         getMenu2(catId, currentMenu)
-        // try {
-        //     const response = await fetch(`http://localhost:3002/dropdown/menu2/${catId}`);
-        //     const catData = await response.json();
-        //     setMenu('menu2');
-        //     setCat(catData);
-        //     catData = catData
-        //     } catch (err) {
-        //     console.log(err.message);
-        //     };
     }
 
+    useEffect(()=>{
+        getMainMenu();
+    }, [])
 
     return (
         <>
@@ -101,15 +95,15 @@ const NavBar = () =>{
                 <div>
                     <img className='NavBarLogo' src='./nex:mexLogo' ></img>
                 </div>
-                <Dropdown direction='down' className='catResults'>
-                    <button onClick={()=> getMainMenu()}>menu</button>
+                    <button onClick={()=> setOpen(!open)}>menu</button>
+                <div className='catResults'>
                     <DropDown
                     categories={categories}
                     getMenu2={getMenu2}
                     getMenu3={getMenu3}
                     goBackMenu1={goBack1}
                     goBackMenu2={goBack2}
-
+                    open={open}
                     parentMenuName={parentMenuName}
                     parentMenuId={parentMenuId}
                     parentMenu={parentMenu}
@@ -120,7 +114,7 @@ const NavBar = () =>{
                     setLastmenu={setLastMenu}
                     setLastMenuName={setParentMenuName}
                     />
-                </Dropdown>
+                </div>
                 <form className='searchBar'>
                     <input type='text' placeholder='Search' className='searchInput'></input>
                     <img className='nexcomMagnify' src='#'></img>
