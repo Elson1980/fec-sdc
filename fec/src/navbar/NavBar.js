@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Dropdown from './Dropdown';
-import { menu } from './menu';
-
+import DropDown from './Dropdown';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 const NavBar = () =>{
     const [categories, setCat] = useState([]);
@@ -11,16 +10,11 @@ const NavBar = () =>{
     const [parentMenuId, setParentMenuId] = useState();
     const [parentMenuName, setParentMenuName] = useState('');
     const [lastMenu, setLastMenu] = useState('');
-    const [nextMenu, setNextMenu] = useState('');
     const [lastCatId, setLastCatId] = useState(1);
     
 
 
     const getMainMenu = async () => {
-        // console.log('lastCatId: ', lastCatId)
-        // console.log('currentCatId: ', catId)
-        // console.log('parentMenuName:', parentMenuName)
-        // console.log('categories:', categories)
         try {
           const response = await fetch("http://localhost:3002/dropdown/menu1");
           const menuData = await response.json();
@@ -39,35 +33,17 @@ const NavBar = () =>{
         setParentMenuName(name)
         setParentMenuId(catId)
         setCatId(id)
-        // console.log('parentId should be: ', id)
-        // console.log('parentName should be: ', name)
-        // console.log('lastCatId: ', lastCatId)
-        // console.log('currentCatId: ', catId)
-        // console.log('parentMenuName:', parentMenuName)
-        // console.log('categories:', categories)
         try {
             const response = await fetch(`http://localhost:3002/dropdown/menu2/${id}`);
             const catData = await response.json();
             setMenu('menu2');
             setCat(catData);
-            catData = catData
             } catch (err) {
             console.log(err.message);
             };
     }
 
     const getMenu3 = async (id, name) => {
-        setLastMenu('menu2')
-        setLastCatId(id)
-        setParentMenuId(catId)
-        setParentMenuName(name)
-        setCatId(id)
-        // console.log('parentId should be: ', id)
-        // console.log('parentName should be: ', name)
-        // console.log('lastCatId: ', lastCatId)
-        // console.log('currentCatId: ', catId)
-        // console.log('parentMenuName:', parentMenuName)
-        // console.log('categories:', categories)
         try {
             const response = await fetch(`http://localhost:3002/dropdown/menu3/${id}`);
             const catData = await response.json();
@@ -89,23 +65,22 @@ const NavBar = () =>{
     }
 
     const goBack2 = async (lastMenu, lastCatId, lastMenuName) =>{
-        // setCatId(lastCatId);
-        // setMenu(lastMenu);
-        // setParentMenuName(lastMenuName)
-        // console.log('lastCatId:' , lastCatId)
-        // console.log('lastMenu:' , lastMenu)
-        // console.log('goBack: lastMenuName: ', lastMenuName)
-        // getMenu2(catId, parentMenuName)
-
-        try {
-            const response = await fetch(`http://localhost:3002/dropdown/menu2/${lastCatId}`);
-            const catData = await response.json();
-            setMenu('menu2');
-            setCat(catData);
-            catData = catData
-            } catch (err) {
-            console.log(err.message);
-            };
+        setCatId(lastCatId);
+        setMenu(lastMenu);
+        setParentMenuName(lastMenuName)
+        console.log('lastCatId:' , lastCatId)
+        console.log('lastMenu:' , lastMenu)
+        console.log('goBack: lastMenuName: ', lastMenuName)
+        getMenu2(catId, currentMenu)
+        // try {
+        //     const response = await fetch(`http://localhost:3002/dropdown/menu2/${catId}`);
+        //     const catData = await response.json();
+        //     setMenu('menu2');
+        //     setCat(catData);
+        //     catData = catData
+        //     } catch (err) {
+        //     console.log(err.message);
+        //     };
     }
 
 
@@ -126,9 +101,9 @@ const NavBar = () =>{
                 <div>
                     <img className='NavBarLogo' src='./nex:mexLogo' ></img>
                 </div>
-                <div className='catResults'>
+                <Dropdown direction='down' className='catResults'>
                     <button onClick={()=> getMainMenu()}>menu</button>
-                    <Dropdown
+                    <DropDown
                     categories={categories}
                     getMenu2={getMenu2}
                     getMenu3={getMenu3}
@@ -145,7 +120,7 @@ const NavBar = () =>{
                     setLastmenu={setLastMenu}
                     setLastMenuName={setParentMenuName}
                     />
-                </div>
+                </Dropdown>
                 <form className='searchBar'>
                     <input type='text' placeholder='Search' className='searchInput'></input>
                     <img className='nexcomMagnify' src='#'></img>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Dropdown = (props) =>{
+const DropDown = (props) =>{
     const { parentMenuId, 
             parentMenuName, 
             parentMenu, 
@@ -68,4 +68,4 @@ if(currentMenu === 'menu1'){
 
 }
 
-export default Dropdown;
+export default DropDown;
