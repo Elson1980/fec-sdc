@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'reactstrap';
 
 
-var escapedData = 0;
-const testFunc = (test) =>{
-  escapedData = test;
 
-}
 
 const ListItem = () => {
     const [item, setItem] = useState([])
@@ -50,7 +45,7 @@ var RS4 = ((testObj['4'] / item.length) * 100).toFixed(0)
 var RS3 = ((testObj['3'] / item.length) * 100).toFixed(0)
 var RS2 = ((testObj['2'] / item.length) * 100).toFixed(0)
 var RS1 = ((testObj['1'] / item.length) * 100).toFixed(0)
-testFunc(RS5)
+
 console.log()
  
 
@@ -80,4 +75,4 @@ console.log()
     </main>
   );
 };
-export {ListItem, escapedData};
+export {ListItem};

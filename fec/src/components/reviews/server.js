@@ -8,10 +8,11 @@ app.use(express.json());
 
 //routes for the server
 app.post("/", async (req, res) => {
+  console.log(req.body)
   try {
     const review = await pool.query(
-      "INSERT INTO people (review_name, review_date) VALUES ($1, $2) RETURNING *",
-      [req.body.review_name, req.body.review_date]
+      "INSERT INTO reviews (author_r_name, review_title, review_date, review_stars, review_body, review_recommend) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;",
+      [req.body.author_r_name, req.body.review_title, req.body.review_date, req.body.review_stars, req.body.review_body, req.body.review_recommend]
     );
     res.json(review.rows[0]);
   } catch (err) {
@@ -21,12 +22,13 @@ app.post("/", async (req, res) => {
 
 app.get("/:index?", async (req, res) => {
   try {
+    console.log('attempting pull from database')
+    console.log(req.params.index, 'index')
     if (req.params.index !== undefined) {
-      let singleReview = await pool.query("SELECT *, to_char(review_date, 'yyyy-MM-dd') as review_date FROM reviews WHERE review_id = $1", [
+      let singleReview = await pool.query("SELECT *, to_char(review_date, 'yyyy-MM-dd') as review_date FROM reviews WHERE id > $1 LIMIT 5", [
         req.params.index
       ]);
-      console.log(req.params.index)
-      console.log(singleReview.rows)
+      
       res.json(singleReview.rows);
     } else {
       let allReviews = await pool.query("SELECT *, to_char(review_date, 'yyyy-MM-dd') as review_date FROM reviews");
@@ -71,13 +73,12 @@ app.listen(3001, () => {
 
 app.get("/a/:index?", async (req, res) => {
   try {
-    console.log(req.params)
+    
     if (req.params.index !== undefined) {
       let singleReview = await pool.query("SELECT author_name FROM author WHERE author_id = $1" , [
         req.params.index
       ]);
-      console.log(req.params.index)
-      console.log(singleReview.rows)
+    
       res.json(singleReview.rows);
     }
   

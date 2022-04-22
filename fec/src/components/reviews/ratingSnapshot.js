@@ -15,7 +15,7 @@ const RatingSnapshot = () => {
     try {
       const response = await fetch("http://localhost:3001");
       const jsonData = await response.json();
-      console.log(jsonData, 'json length');
+      // console.log(jsonData, 'json length');
       setItem(jsonData)
     } catch (err) {
       console.log(err.message);
@@ -57,7 +57,7 @@ var valNum = (overallValue / item.length).toFixed(1)
 var starsNum = (overallStars / item.length).toFixed(1)
 var valMeter = (valNum / 5) * 100
 var qualMeter = (qualNum / 5) * 100
-console.log(starsNum)
+
 var overallChar = ''
 if(starsNum <= 1){
     overallChar = '★'
