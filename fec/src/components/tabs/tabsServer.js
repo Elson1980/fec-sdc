@@ -83,11 +83,11 @@ app.get("/features/:id?", async (req, res) => {
 });
 
 //Get Legal Name
-app.get("/legalname/:id?", async (req, res) => {
+app.get("/legal/:id?", async (req, res) => {
   const { id } = req.params;
   try {
     if (id !== undefined) {
-      let legalName = await pool.query("SELECT name FROM legal WHERE id = $1", [id]);
+      let legalName = await pool.query("SELECT * FROM legal WHERE id = $1", [id]);
 
       console.log(id)
       console.log(legalName.rows)
@@ -100,31 +100,13 @@ app.get("/legalname/:id?", async (req, res) => {
     console.log(err.message);
   }
 });
-//Get Legal URL
-app.get("/legalurl/:id?", async (req, res) => {
-  const { id } = req.params;
-  try {
-    if (id !== undefined) {
-      let legalURL = await pool.query("SELECT url FROM legal WHERE id = $1", [id]);
-
-      console.log(id)
-      console.log(legalURL.rows)
-      res.json(legalURL.rows);
-    } else {
-      let allFeatures = await pool.query("SELECT * FROM legal");
-      res.json(allFeatures.rows);
-    }
-  } catch (err) {
-    console.log(err.message);
-  }
-});
 
 // Get ourPartner Name
-app.get("/partnername/:id?", async (req, res) => {
+app.get("/partner/:id?", async (req, res) => {
   const { id } = req.params;
   try {
     if (id !== undefined) {
-      let partnerName = await pool.query("SELECT name FROM ourpartners WHERE id = $1", [id]);
+      let partnerName = await pool.query("SELECT * FROM ourpartners WHERE id = $1", [id]);
 
       console.log(id)
       console.log(partnerName.rows)
@@ -137,31 +119,13 @@ app.get("/partnername/:id?", async (req, res) => {
     console.log(err.message);
   }
 });
-// Get ourPartner URL
-app.get("/partnerurl/:id?", async (req, res) => {
-  const { id } = req.params;
-  try {
-    if (id !== undefined) {
-      let partnerURL = await pool.query("SELECT url FROM ourpartners WHERE id = $1", [id]);
-
-      console.log(id)
-      console.log(partnerURL.rows)
-      res.json(partnerURL.rows);
-    } else {
-      let allFeatures = await pool.query("SELECT * FROM ourpartners");
-      res.json(allFeatures.rows);
-    }
-  } catch (err) {
-    console.log(err.message);
-  }
-});
 
 // Get customerService Name
-app.get("/servicename/:id?", async (req, res) => {
+app.get("/service/:id?", async (req, res) => {
   const { id } = req.params;
   try {
     if (id !== undefined) {
-      let customerService = await pool.query("SELECT name FROM customerservice WHERE id = $1", [id]);
+      let customerService = await pool.query("SELECT * FROM customerservice WHERE id = $1", [id]);
 
       console.log(id)
       console.log(customerService.rows)
@@ -174,25 +138,6 @@ app.get("/servicename/:id?", async (req, res) => {
     console.log(err.message);
   }
 });
-// Get customerService URL
-app.get("/serviceurl/:id?", async (req, res) => {
-  const { id } = req.params;
-  try {
-    if (id !== undefined) {
-      let customerServiceURL = await pool.query("SELECT url FROM customerservice WHERE id = $1", [id]);
-
-      console.log(id)
-      console.log(customerServiceURL.rows)
-      res.json(customerServiceURL.rows);
-    } else {
-      let allFeatures = await pool.query("SELECT * FROM customerservice");
-      res.json(allFeatures.rows);
-    }
-  } catch (err) {
-    console.log(err.message);
-  }
-});
-
 
 app.listen(3001, () => {
   console.log("server started on 3001");

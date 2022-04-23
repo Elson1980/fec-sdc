@@ -2,12 +2,11 @@ import React, { Component, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
-  const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    handleAccordion();
-  });
-
+  const [legal, setLegal] = useState([]);
+  const [partners, setPartners] = useState([]);
+  const [service, setService] = useState([]);
+  
   const handleAccordion = () => {
     document.querySelectorAll(".accordion-btn").forEach((item) => {
       item.addEventListener("click", (event) => {
@@ -26,7 +25,44 @@ const Footer = () => {
       });
     });
   };
+  
+  const getLegal = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/legal");
+      const jsonLegal = await res.json();
+      setLegal(jsonLegal);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+  
+  const getPartners = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/partner");
+      const jsonPartners = await res.json();
+      setPartners(jsonPartners);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
+  
+  const getService = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/service");
+      const jsonService = await res.json();
+      setService(jsonService);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
 
+  useEffect(() => {
+    handleAccordion();
+    getLegal();
+    getPartners();
+    getService();    
+  }, []);
+  
   return (
     <footer>
       <div className="footer">
@@ -101,31 +137,22 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+        
         <div className="row md-row">
           <div className="col3 col">
             <div className="col4 md-col">
               <p>
                 <strong>Legal</strong>
               </p>
-              <a href="https://www.mynavyexchange.com/nex/sitemap">
-                <p>Site Map</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/nex/privacy">
-                <p>Privacy Policy</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/customerservice/contactUs.jsp">
-                <p>Contact Us</p>
-              </a>
-              <a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx">
-                <p>508 Compliance</p>
-              </a>
-              <a href="https://www.foiaonline.gov/foiaonline/action/public/request">
-                <p>FOIA</p>
-              </a>
-              <a href="https://www.secnav.navy.mil/donhr/Site/Pages/No-Fear-Act.aspx#">
-                <p>No FearAct</p>
-              </a>
+
+              {legal.map((e) => (
+                <p key={e.id}>
+                  <a href={e.url}>
+                    {e.name}
+                  </a>
+                </p>
+              ))}
+
             </div>
           </div>
           <div className="col3 col">
@@ -133,30 +160,15 @@ const Footer = () => {
               <p>
                 <strong>Our Partners</strong>
               </p>
-              <a href="https://www.navy.com/">
-                <p>Navy.com</p>
-              </a>
-              <a href="https://www.navy.mil/">
-                <p>Navy.mil</p>
-              </a>
-              <a href="https://www.navsup.navy.mil/public/navsup/home">
-                <p>NAVSUP</p>
-              </a>
-              <a href="https://www.navy-lodge.com">
-                <p>Navy Lodge</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/nex/enterprise-info/our-seven-business-lines/ngis">
-                <p>Navy Gateway Inns & Suites</p>
-              </a>
-              <a href="https://www.myecp.com/CustomerAds/Page/Navy">
-                <p>Military Star Card</p>
-              </a>
-              <a href="https://seals.networksolutions.com/siteseal_seek/steseal?v_shortname=NETSB&v_querytype=W&v_search=www.mynavyexchange.com&x=5&y=5">
-                <p>Network Solutions</p>
-              </a>
-              <a href="https://www.usa.gov/">
-                <p>USA.gov</p>
-              </a>
+
+              {partners.map((e) => (
+                <p key={e.id}>
+                  <a href={e.url}>
+                    {e.name}
+                  </a>
+                </p>
+              ))}
+
             </div>
           </div>
           <div className="col3 col">
@@ -164,24 +176,15 @@ const Footer = () => {
               <p>
                 <strong>Customer Service</strong>
               </p>
-              <a href="https://www.mynavyexchange.com/nex/work-for-us">
-                <p>Work For Us</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/nex/doing-business-with-us">
-                <p>Doing Business With Us</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/NEXtLevelRewards">
-                <p>NEXt Level Rewards</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/take-a-survey">
-                <p>Take A Survey</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/nex/faqs">
-                <p>FAQ</p>
-              </a>
-              <a href="https://www.mynavyexchange.com/nex/enterprise-info">
-                <p>NEXCOM Enterprise Information</p>
-              </a>
+
+              {service.map((e) => (
+                <p key={e.id}>
+                  <a href={e.url}>
+                    {e.name}
+                  </a>
+                </p>
+              ))}
+
             </div>
           </div>
 
@@ -195,9 +198,9 @@ const Footer = () => {
               className="accordion-btn"
               target="#collapse-legal"
               type="button"
-              onClick={() => {
-                console.log("hi");
-              }}
+              // onClick={() => {
+              //   console.log("hi");
+              // }}
             >
               Legal
             </button>
@@ -205,36 +208,15 @@ const Footer = () => {
             {/* Legal List Collapse */}
             <div id="collapse-legal" className="accordion-collapse collapse">
               <div className="links accordion-content">
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/nex/sitemap">
-                    Site Map
+                {/* <p className="n-font"> */}
+
+                {legal.map((e) => (
+                <p key={e.id} className="n-font">
+                  <a href={e.url}>
+                    {e.name}
                   </a>
                 </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/nex/privacy">
-                    Privacy Policy
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/customerservice/contactUs.jsp">
-                    Contact Us
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx">
-                    508 Compliance
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.foiaonline.gov/foiaonline/action/public/request">
-                    FOIA
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.secnav.navy.mil/donhr/Site/Pages/No-Fear-Act.aspx#">
-                    No Fear Act
-                  </a>
-                </p>
+              ))}                
               </div>
             </div>
 
@@ -256,38 +238,13 @@ const Footer = () => {
               className="accordion-collapse collapse"
             >
               <div className="links accordion-content">
-                <p className="n-font">
-                  <a href="https://www.navy.com/">Navy.com</a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.navy.mil/">Navy.com</a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.navsup.navy.mil/public/navsup/home">
-                    NAVSUP
+              {partners.map((e) => (
+                <p key={e.id}>
+                  <a href={e.url}>
+                    {e.name}
                   </a>
                 </p>
-                <p className="n-font">
-                  <a href="https://www.navy-lodge.com">Navy Lodge</a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/nex/enterprise-info/our-seven-business-lines/ngis">
-                    Gateway Inns & Suites
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.myecp.com/CustomerAds/Page/Navy">
-                    Military Star Card
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://seals.networksolutions.com/siteseal_seek/steseal?v_shortname=NETSB&v_querytype=W&v_search=www.mynavyexchange.com&x=5&y=">
-                    Network Solutions
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.usa.gov">USA.gov</a>
-                </p>
+              ))}
               </div>
             </div>
 
@@ -309,34 +266,13 @@ const Footer = () => {
               className="accordion-collapse collapse"
             >
               <div className="links accordion-content">
-              <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/nex/work-for-us">
-                    Work For Us
+              {service.map((e) => (
+                <p key={e.id}>
+                  <a href={e.url}>
+                    {e.name}
                   </a>
                 </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/nex/doing-business-with-us">
-                    Doing Business With Us
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/NEXtLevelRewards">
-                    NEXt Level Rewards
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/take-a-survey">
-                    Take A Survey
-                  </a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/nex/faqs">FAQ</a>
-                </p>
-                <p className="n-font">
-                  <a href="https://www.mynavyexchange.com/nex/enterprise-info">
-                    NEXCOM Enterprise Information
-                  </a>
-                </p>
+              ))}
               </div>
             </div>
           </div>

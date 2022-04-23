@@ -15,10 +15,8 @@ const ListFeatures = () => {
   };
 
   useEffect(() => {
-    getFeature();
+    getFeature();    
   }, []);
-
-  const handleShipping = () => {};
 
   return (
     <div className="productTabs">
@@ -56,7 +54,7 @@ const ListFeatures = () => {
           <p className="productInfo">Features</p>
           {feature.map((e) => (
             <ul key={e.id} className="productInfo">
-              <li className="featureList">{e.product_feature}</li>
+              <li className="featureList">{e.feature}</li>
             </ul>
           ))}
       </div>  
