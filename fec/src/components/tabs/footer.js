@@ -1,8 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
-import CollapseButtons from "./button";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AccordionInfo from "./buttonInfo";
-import "bootstrap/js/src/collapse.js";
 
 const Footer = () => {
   const [isActive, setIsActive] = useState(false);
@@ -12,22 +9,22 @@ const Footer = () => {
   });
 
   const handleAccordion = () => {
-
-    const getButton1 = document.getElementById("a-btn1");
-    const getButton2 = document.getElementById("a-btn2");
-    const getButton3 = document.getElementById("a-btn3");
-
-    getButton1.addEventListener('click', () => {
-      console.log('hi')
-    })
-
-    getButton2.addEventListener('click', () => {
-      console.log('hi')
-    })
-
-    getButton3.addEventListener('click', () => {
-      console.log('hi')
-    })
+    document.querySelectorAll(".accordion-btn").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        if (!item.classList.contains("open")) {
+          item.nextElementSibling.classList = "accordion-collapse collapsing";
+          setTimeout(() => {
+            item.nextElementSibling.classList = "accordion-collapse open";
+          }, 300);
+        } else {
+          item.nextElementSibling.classList = "accordion-collapse collapsing";
+          setTimeout(() => {
+            item.nextElementSibling.classList = "accordion-collapse collapse";
+          }, 300);
+        }
+        item.classList.toggle("open");
+      });
+    });
   };
 
   return (
@@ -189,25 +186,25 @@ const Footer = () => {
           </div>
 
           {/* This needs to be active upon window resize */}
-          <div className="accordion accordion-primay md-none">
+          <div
+            id="accordionTabs"
+            className="accordion accordion-primay md-none"
+          >
             {/* Legal Button */}
             <button
-              id="a-btn1"
-              aria-expanded={isActive}
-              className="accordion btn l-btn a-btn"
-              data-toggle="collapse"
-              data-target="#collapse-legal"
+              className="accordion-btn"
+              target="#collapse-legal"
               type="button"
-              onClick={() => {           
-                  // console.log('hi')                
+              onClick={() => {
+                console.log("hi");
               }}
             >
-              <span className="btnText btn-accordion-icon">Legal</span>
+              Legal
             </button>
 
             {/* Legal List Collapse */}
-            <div id="collapse-legal" className="accordion-content collapse">
-              <div className="links">
+            <div id="collapse-legal" className="accordion-collapse collapse">
+              <div className="links accordion-content">
                 <p className="n-font">
                   <a href="https://www.mynavyexchange.com/nex/sitemap">
                     Site Map
@@ -223,17 +220,17 @@ const Footer = () => {
                     Contact Us
                   </a>
                 </p>
-                <p>
+                <p className="n-font">
                   <a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx">
                     508 Compliance
                   </a>
                 </p>
-                <p>
+                <p className="n-font">
                   <a href="https://www.foiaonline.gov/foiaonline/action/public/request">
                     FOIA
                   </a>
                 </p>
-                <p>
+                <p className="n-font">
                   <a href="https://www.secnav.navy.mil/donhr/Site/Pages/No-Fear-Act.aspx#">
                     No Fear Act
                   </a>
@@ -242,45 +239,105 @@ const Footer = () => {
             </div>
 
             {/* Our Partners Button */}
-            <button 
-              id="a-btn2"
-              name="a-btn"
-              aria-expanded="false"
-              className="accordion btn l-btn a-btn"
-              data-toggle="collapse"
-              data-target="#collapse-OurPartners"
+            <button
+              className="accordion-btn"
+              target="#collapse-OurPartners"
               type="button"
-              onClick={() => {           
-                // console.log('hi')                
-            }}
+              onClick={() => {
+                // console.log("hi");
+              }}
             >
-              <span>Our Partners</span>
+              Our Partners
             </button>
 
             {/* Our Partners List Collapse */}
-            <div id="collapse-OurPartners">
-              <div className="links"></div>
+            <div
+              id="collapse-OurPartners"
+              className="accordion-collapse collapse"
+            >
+              <div className="links accordion-content">
+                <p className="n-font">
+                  <a href="https://www.navy.com/">Navy.com</a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.navy.mil/">Navy.com</a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.navsup.navy.mil/public/navsup/home">
+                    NAVSUP
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.navy-lodge.com">Navy Lodge</a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.mynavyexchange.com/nex/enterprise-info/our-seven-business-lines/ngis">
+                    Gateway Inns & Suites
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.myecp.com/CustomerAds/Page/Navy">
+                    Military Star Card
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://seals.networksolutions.com/siteseal_seek/steseal?v_shortname=NETSB&v_querytype=W&v_search=www.mynavyexchange.com&x=5&y=">
+                    Network Solutions
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.usa.gov">USA.gov</a>
+                </p>
+              </div>
             </div>
 
             {/* Customer Service Button */}
             <button
-              id="a-btn3"
-              name="a-btn"
-              aria-expanded="false"
-              className="accordion btn l-btn a-btn"
-              data-toggle="collapse"
-              data-target="#collapse-CustomerService"
+              className="accordion-btn"
+              target="#collapse-CustomerService"
               type="button"
-              onClick={() => {           
-                // console.log('hi')                
-            }}
+              onClick={() => {
+                console.log("hi");
+              }}
             >
-              <span>Customer Service</span>
+              Customer Service
             </button>
 
             {/* Customer Service List Collapse */}
-            <div id="collapse-CustomerService">
-              <div className="links"></div>
+            <div
+              id="collapse-CustomerService"
+              className="accordion-collapse collapse"
+            >
+              <div className="links accordion-content">
+              <p className="n-font">
+                  <a href="https://www.mynavyexchange.com/nex/work-for-us">
+                    Work For Us
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.mynavyexchange.com/nex/doing-business-with-us">
+                    Doing Business With Us
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.mynavyexchange.com/NEXtLevelRewards">
+                    NEXt Level Rewards
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.mynavyexchange.com/take-a-survey">
+                    Take A Survey
+                  </a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.mynavyexchange.com/nex/faqs">FAQ</a>
+                </p>
+                <p className="n-font">
+                  <a href="https://www.mynavyexchange.com/nex/enterprise-info">
+                    NEXCOM Enterprise Information
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
