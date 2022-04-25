@@ -1,31 +1,33 @@
 import React, { Component, useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+
+import styles from "./styles/footer.module.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
-
+  
   const [legal, setLegal] = useState([]);
   const [partners, setPartners] = useState([]);
   const [service, setService] = useState([]);
-  
+
   const handleAccordion = () => {
-    document.querySelectorAll(".accordion-btn").forEach((item) => {
-      item.addEventListener("click", (event) => {
+    document.querySelectorAll(".accordionbtn").forEach((item) => {
+      item.addEventListener("click", (event) => {        
         if (!item.classList.contains("open")) {
-          item.nextElementSibling.classList = "accordion-collapse collapsing";
+          item.nextElementSibling.classList = "accordioncollapse collapsing";
           setTimeout(() => {
-            item.nextElementSibling.classList = "accordion-collapse open";
+            item.nextElementSibling.classList = "accordioncollapse open";
           }, 300);
         } else {
-          item.nextElementSibling.classList = "accordion-collapse collapsing";
+          item.nextElementSibling.classList = "accordioncollapse collapsing";
           setTimeout(() => {
-            item.nextElementSibling.classList = "accordion-collapse collapse";
+            item.nextElementSibling.classList = "accordioncollapse collapse";
           }, 300);
         }
         item.classList.toggle("open");
       });
     });
   };
-  
+
   const getLegal = async () => {
     try {
       const res = await fetch("http://localhost:3001/legal");
@@ -35,7 +37,7 @@ const Footer = () => {
       console.log(err.message);
     }
   };
-  
+
   const getPartners = async () => {
     try {
       const res = await fetch("http://localhost:3001/partner");
@@ -44,8 +46,8 @@ const Footer = () => {
     } catch (err) {
       console.log(err.message);
     }
-  }
-  
+  };
+
   const getService = async () => {
     try {
       const res = await fetch("http://localhost:3001/service");
@@ -54,179 +56,172 @@ const Footer = () => {
     } catch (err) {
       console.log(err.message);
     }
-  }
+  };
 
   useEffect(() => {
-    handleAccordion();
+    // handleAccordion();
     getLegal();
     getPartners();
-    getService();    
+    getService();
   }, []);
-  
+
   return (
     <footer>
-      <div className="footer">
-        <div className="row">
-          <div className="col">
-            <div className="footerTop">
-              <div className="footerTopImg">
+      <div className={styles.footer}>
+        <div className={styles.row}>
+          <div className={styles.col}>
+            <div className={styles.footerTop}>
+              <div className={styles.footerTopImg}>
                 <a href="https://www.mynavyexchange.com/account/digitalflyer">
                   <img src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-WEEKLYAD.svg"></img>
                 </a>
               </div>
-              <div className="footerTopImg">
+              <div className={styles.footerTopImg}>
                 <a href="https://www.mynavyexchange.com/giftcards/browse/giftcard.jsp">
                   <img
-                    className="imgTop"
+                    className={styles.imgTop}
                     src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-GIFTCARDS.svg"
                   ></img>
                 </a>
               </div>
-              <div className="footerTopImg">
+              <div className={styles.footerTopImg}>
                 <a href="https://www.mynavyexchange.com/storelocator/storesearch.jsp">
                   <img
-                    className="imgTop"
+                    className={styles.imgTop}
                     src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-FINDSTORE.svg"
                   ></img>
                 </a>
               </div>
             </div>
 
-            <div className="col">
-              <div className="row">
-                <img
-                  className="blueLine"
-                  src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-COLOR.svg"
-                ></img>
-                <div className="row2 col2">
-                  <a href="https://www.mynavyexchange.com/nex/customer-service/store-policies">
-                    <img
-                      className="footerMidImg"
-                      src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-SHIPPING.svg"
-                    ></img>
-                  </a>
-                </div>
-                <div className="row2 col2">
-                  <a href="https://www.mynavyexchange.com/nex/customer-service/store-policies">
-                    <img
-                      className="footerMidImg"
-                      src="	https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-TAXFREE.svg"
-                    ></img>
-                  </a>
-                </div>
-                <div className="row2 col2">
-                  <a href="https://www.mynavyexchange.com/nex/customer-service/store-policies">
-                    <img
-                      className="footerMidImg"
-                      src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-PRICEMATCH.svg"
-                    ></img>
-                  </a>
-                </div>
-                <div className="row2 col2">
-                  <img
-                    className="footerMidImg"
-                    src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-MWR.svg"
-                  ></img>
-                </div>
+            <img
+              className={styles.blueLine}
+              src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-COLOR.svg"
+            ></img>
 
+            {/* <div className={styles.col}> */}
+            <div className={styles.footerTop}>
+              <div className={styles.col2}>
+                <a href="https://www.mynavyexchange.com/nex/customer-service/store-policies">
+                  <img
+                    className={styles.footerMidImg}
+                    src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-SHIPPING.svg"
+                  ></img>
+                </a>
+              </div>
+              <div className={styles.col2}>
+                <a href="https://www.mynavyexchange.com/nex/customer-service/store-policies">
+                  <img
+                    className={styles.footerMidImg}
+                    src="	https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-TAXFREE.svg"
+                  ></img>
+                </a>
+              </div>
+              <div className={styles.col2}>
+                <a href="https://www.mynavyexchange.com/nex/customer-service/store-policies">
+                  <img
+                    className={styles.footerMidImg}
+                    src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-PRICEMATCH.svg"
+                  ></img>
+                </a>
+              </div>
+              <div className={styles.col2}>
                 <img
-                  className="blueLine"
-                  src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-COLOR.svg"
+                  className={styles.footerMidImg}
+                  src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-2-MWR.svg"
                 ></img>
               </div>
             </div>
           </div>
+          {/* </div> */}
         </div>
-        
-        <div className="row md-row">
-          <div className="col3 col">
-            <div className="col4 md-col">
+
+        <img
+          className={styles.blueLine}
+          src="https://www.mynavyexchange.com/assets/Global/Footer/FOOTER-LINE-COLOR.svg"
+        ></img>
+
+        <div className={styles.row + " " + styles.mdrow}>
+          <div className={styles.col3 + " " + styles.mdrowlinks}>
+            <div>
               <p>
                 <strong>Legal</strong>
               </p>
 
               {legal.map((e) => (
                 <p key={e.id}>
-                  <a href={e.url}>
-                    {e.name}
-                  </a>
+                  <a href={e.url}>{e.name}</a>
                 </p>
               ))}
-
             </div>
           </div>
-          <div className="col3 col">
-            <div className="col4 md-col">
+          <div className={styles.col3 + " " + styles.mdrowlinks}>
+            <div>
               <p>
                 <strong>Our Partners</strong>
               </p>
 
               {partners.map((e) => (
                 <p key={e.id}>
-                  <a href={e.url}>
-                    {e.name}
-                  </a>
+                  <a href={e.url}>{e.name}</a>
                 </p>
               ))}
-
             </div>
           </div>
-          <div className="col3 col">
-            <div className="col4 md-col">
+          <div className={styles.col3 + " " + styles.mdrowlinks}>
+            <div>
               <p>
                 <strong>Customer Service</strong>
               </p>
 
               {service.map((e) => (
                 <p key={e.id}>
-                  <a href={e.url}>
-                    {e.name}
-                  </a>
+                  <a href={e.url}>{e.name}</a>
                 </p>
               ))}
-
             </div>
           </div>
 
           {/* This needs to be active upon window resize */}
           <div
             id="accordionTabs"
-            className="accordion accordion-primay md-none"
+            className={
+              styles.accordion + " " + styles.mdnone + " " + styles.btn
+            }
           >
             {/* Legal Button */}
             <button
-              className="accordion-btn"
+              className={`accordionbtn ${styles.accordionbtn}`}
               target="#collapse-legal"
               type="button"
-              // onClick={() => {
-              //   console.log("hi");
-              // }}
+              onClick={(e) => {
+                handleAccordion();                
+              }}
             >
               Legal
             </button>
 
             {/* Legal List Collapse */}
-            <div id="collapse-legal" className="accordion-collapse collapse">
-              <div className="links accordion-content">
-                {/* <p className="n-font"> */}
-
+            <div
+              id="collapse-legal"
+              className={styles.accordioncollapse + " " + "collapse"}
+            >
+              <div className={styles.links}>
                 {legal.map((e) => (
-                <p key={e.id} className="n-font">
-                  <a href={e.url}>
-                    {e.name}
-                  </a>
-                </p>
-              ))}                
+                  <p key={e.id} className={styles.nfont}>
+                    <a href={e.url}>{e.name}</a>
+                  </p>
+                ))}
               </div>
             </div>
 
             {/* Our Partners Button */}
             <button
-              className="accordion-btn"
+              className={`accordionbtn ${styles.accordionbtn}`}
               target="#collapse-OurPartners"
               type="button"
-              onClick={() => {
-                // console.log("hi");
+              onClick={(e) => {
+                handleAccordion();                
               }}
             >
               Our Partners
@@ -235,26 +230,24 @@ const Footer = () => {
             {/* Our Partners List Collapse */}
             <div
               id="collapse-OurPartners"
-              className="accordion-collapse collapse"
+              className={styles.accordioncollapse + " " + "collapse"}
             >
-              <div className="links accordion-content">
-              {partners.map((e) => (
-                <p key={e.id}>
-                  <a href={e.url}>
-                    {e.name}
-                  </a>
-                </p>
-              ))}
+              <div className={styles.links}>
+                {partners.map((e) => (
+                  <p key={e.id} className={styles.nfont}>
+                    <a href={e.url}>{e.name}</a>
+                  </p>
+                ))}
               </div>
             </div>
 
             {/* Customer Service Button */}
             <button
-              className="accordion-btn"
+              className={`accordionbtn ${styles.accordionbtn}`}
               target="#collapse-CustomerService"
               type="button"
-              onClick={() => {
-                console.log("hi");
+              onClick={(e) => {
+                handleAccordion();                
               }}
             >
               Customer Service
@@ -263,80 +256,172 @@ const Footer = () => {
             {/* Customer Service List Collapse */}
             <div
               id="collapse-CustomerService"
-              className="accordion-collapse collapse"
+              className={styles.accordioncollapse + " " + "collapse"}
             >
-              <div className="links accordion-content">
-              {service.map((e) => (
-                <p key={e.id}>
-                  <a href={e.url}>
-                    {e.name}
-                  </a>
-                </p>
-              ))}
+              <div className={styles.links}>
+                {service.map((e) => (
+                  <p key={e.id} className={styles.nfont}>
+                    <a href={e.url}>{e.name}</a>
+                  </p>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="row imgB1 imgB2">
-            <div className="img-bt md-ibc1 md-ibc2 md-ibc3 justify-center flex">
+          <div
+            className={
+              styles.row +
+              " " +
+              styles.imgB1 +
+              " " +
+              styles.imgB2 +
+              " " +
+              styles.justifycenter +
+              " " +
+              styles.col
+            }
+          >
+            <div
+              className={
+                styles.imgbt +
+                " " +
+                styles.mdibc1 +
+                " " +
+                styles.mdibc2 +
+                " " +
+                styles.justifycenter +
+                " " +
+                styles.flex
+              }
+            >
               <img
-                className="imgBottomStyle ims"
+                className={styles.imgBottomStyle + " " + styles.ims}
                 src="https://www.mynavyexchange.com/assets/Global/Footer/TakingCareofOurOwn.svg"
               ></img>
             </div>
-            <div className="socialMediaLinks md-sm1 md-sm2 align justify-around flex">
-              <a
-                className="social"
-                href="https://www.facebook.com/NavyExchange"
+            <div className={styles.row2 + " " + styles.justifycenter}>
+              <div
+                className={
+                  styles.socialMediaLinks +
+                  " " +
+                  styles.mdsm1 +
+                  " " +
+                  styles.mdsm2 +
+                  " " +
+                  styles.align +
+                  " " +
+                  styles.justifyaround +
+                  " " +
+                  styles.flex +
+                  " " +
+                  styles.col + 
+                  " " +
+                  styles.center
+                }
               >
-                <img
-                  className="social"
-                  src="https://www.mynavyexchange.com/assets/Global/Footer/Social-Facebook.png"
-                ></img>
-              </a>
-              <a
-                className="social"
-                href="https://www.pinterest.comnavyexchange"
+                <a
+                  className={styles.social}
+                  href="https://www.facebook.com/NavyExchange"
+                >
+                  <img
+                    className={styles.social}
+                    src="https://www.mynavyexchange.com/assets/Global/Footer/Social-Facebook.png"
+                  ></img>
+                </a>
+                <a
+                  className={styles.social}
+                  href="https://www.pinterest.comnavyexchange"
+                >
+                  <img
+                    className={styles.social}
+                    src="https://www.mynavyexchange.com/assets/Global/Footer/Social-Pinterest.png"
+                  ></img>
+                </a>
+                <a
+                  className={styles.social}
+                  href="https://twitter.com/navyexchange"
+                >
+                  <img
+                    className={styles.social}
+                    src="	https://www.mynavyexchange.com/assets/Global/Footer/Social-Twitter.png"
+                  ></img>
+                </a>
+                <a
+                  className={
+                    styles.social +
+                    " " +
+                    styles.social1 +
+                    " " +
+                    styles.mdsocial1 +
+                    " " +
+                    styles.col
+                  }
+                  href="https://instagram.com/navyexchange"
+                >
+                  <img
+                    className={styles.social}
+                    src="https://www.mynavyexchange.com/assets/Global/Footer/Social-Instagram.png"
+                  ></img>
+                </a>
+              </div>
+              <div
+                className={
+                  styles.colbc +
+                  " " +
+                  styles.mdbc1 +
+                  " " +
+                  styles.mdbc2 +
+                  "  " +
+                  styles.mdbc4 +
+                  " " +
+                  styles.aligntext +
+                  " " +
+                  styles.col +
+                  " " +
+                  styles.center
+                }
               >
-                <img
-                  className="social"
-                  src="https://www.mynavyexchange.com/assets/Global/Footer/Social-Pinterest.png"
-                ></img>
-              </a>
-              <a className="social" href="https://twitter.com/navyexchange">
-                <img
-                  className="social"
-                  src="	https://www.mynavyexchange.com/assets/Global/Footer/Social-Twitter.png"
-                ></img>
-              </a>
-              <a
-                className="social social1 align-text md-social1"
-                href="https://instagram.com/navyexchange"
+                <strong>
+                  <span className={styles.tinyFont + " " + styles.aligntext}>
+                    ©2021 Navy Exchange Service Command all rights reserved.
+                    Navy Exchange Service Command, 3280 Virginia Beach Blvd, VA
+                    23452-5724. This is an Official U.S. Navy Web Site. NEXCOM
+                    claims ownership in its trademarks regardless of the format
+                    in which they appear on this website and related pages or
+                    links.
+                  </span>
+                </strong>
+              </div>
+              <div
+                className={
+                  styles.colcrisis +
+                  " " +
+                  styles.flex +
+                  " " +
+                  styles.justifycenter +
+                  " " +
+                  styles.mtcrisis +
+                  " " +
+                  styles.mdcrisis1 +
+                  " " +
+                  styles.mdcrisis2 +
+                  " " +
+                  styles.mdcrisis3 +
+                  " " +
+                  styles.align +
+                  " " +
+                  styles.col +
+                  " " +
+                  styles.center
+                }
               >
-                <img
-                  className="social"
-                  src="https://www.mynavyexchange.com/assets/Global/Footer/Social-Instagram.png"
-                ></img>
-              </a>
-            </div>
-            <div className="col-bc md-bc1 md-bc2 md-bc4 align-text">
-              <strong>
-                <span className="tinyFont align-text">
-                  ©2021 Navy Exchange Service Command all rights reserved. Navy
-                  Exchange Service Command, 3280 Virginia Beach Blvd, VA
-                  23452-5724. This is an Official U.S. Navy Web Site. NEXCOM
-                  claims ownership in its trademarks regardless of the format in
-                  which they appear on this website and related pages or links.
-                </span>
-              </strong>
-            </div>
-            <div className="col-crisis flex justify-center mt-crisis md-crisis1 md-crisis2 md-crisis3 align">
-              <a href="https://www.veteranscrisisline.net">
-                <img
-                  className="crisis"
-                  src="https://www.mynavyexchange.com/assets/Global/Footer/VeteransCrisisLineLogo.png"
-                ></img>
-              </a>
+                <a href="https://www.veteranscrisisline.net">
+                  <img
+                    className={styles.crisis}
+                    src="https://www.mynavyexchange.com/assets/Global/Footer/VeteransCrisisLineLogo.png"
+                  ></img>
+                </a>
+              </div>
             </div>
           </div>
         </div>
