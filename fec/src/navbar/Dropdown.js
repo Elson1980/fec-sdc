@@ -24,11 +24,17 @@ if(currentMenu === 'menu1'){
         <>
             <div className='menu'>
                 {categories.map((category) => 
-                    <div className='catContainer' key={category.id}>
+                    <a onClick={() =>{getMenu2(category.id, category.name)} } className='catContainer' key={category.id}>
                         {category.name}
-                        <button onClick={() =>{getMenu2(category.id, category.name)} }>more</button>
-                    </div>
+                        {/* <button onClick={() =>{getMenu2(category.id, category.name)} }>more</button> */}
+                    </a>
                 )}
+                <div className='bottomMenu'>
+                    <div className="catContainer">Coupons</div>
+                    <div className='sale' >View All Sale</div>
+                    <div className='sale' >View all Clearance</div>
+                    <div className='catContainer'>Weekly Add</div>
+                </div>
             </div>
         </>
     )
@@ -37,16 +43,21 @@ if(currentMenu === 'menu1'){
         <>
             <div className='menu'>
                 <div className='backContainer'>
-                    <button onClick={()=> goBackMenu1(lastMenu, lastMenuId, lastMenuName)}>back</button>
-                    <div>Main Menu</div>
+                    <a onClick={()=> goBackMenu1(lastMenu, lastMenuId, lastMenuName)}>Main Menu</a>
                 </div>
-                <a href=''>show all {parentMenuName}</a>
+                <div href=''>show all {parentMenuName}</div>
                 {categories.map((category) =>
-                    <div className='catContainer' key={category.id}>
+                    <a onClick={() =>{getMenu3(category.id, category.name)}} className='catContainer' key={category.id}>
                         {category.name}
-                        <button onClick={() =>{getMenu3(category.id, category.name)} }>more</button>
-                    </div>
+                        {/* <button onClick={() =>{getMenu3(category.id, category.name)}}>more</button> */}
+                    </a>
                 )}
+                <div className='bottomMenu'>
+                    <div className="catContainer">Coupons</div>
+                    <div className='sale' >View All Sale</div>
+                    <div className='sale' >View all Clearance</div>
+                    <div className='catContainer'>Weekly Add</div>
+                </div>
             </div>
         </>
     )
@@ -56,14 +67,20 @@ if(currentMenu === 'menu1'){
         <>
             <div className='menu'>
                 <div className='backContainer'>
-                    <button onClick={()=> goBackMenu2(lastMenu, lastMenuId, parentMenuName)} >back</button>
+                    <a onClick={()=> goBackMenu2(lastMenu, lastMenuId, parentMenuName)} >Back</a>
                 </div>
-                <a href=''>show all {parentMenuName}</a>
+                <div href=''>show all {parentMenuName}</div>
                 {categories.map((category) => 
                     <a href=''className='catContainer' key={category.id}>
                         {category.name}
                     </a>
                 )}
+                <div className='bottomMenu'>
+                    <div className="catContainer">Coupons</div>
+                    <div className='sale' >View All Sale</div>
+                    <div className='sale' >View all Clearance</div>
+                    <div className='catContainer'>Weekly Add</div>
+                </div>
             </div>
         </>
     )

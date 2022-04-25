@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 const ListItem = () => {
-    const [item, setItem] = useState([])
+  const [item, setItem] = useState([])
   const getItem = async () => {
     try {
-      const response = await fetch("http://localhost:3001");
+      const response = await fetch("http://localhost:3002");
       const jsonData = await response.json();
-      console.log(jsonData);
+      // console.log(jsonData);
       setItem(jsonData)
     } catch (err) {
       console.log(err.message);

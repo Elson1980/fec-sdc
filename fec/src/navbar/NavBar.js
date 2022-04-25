@@ -74,6 +74,12 @@ const NavBar = () =>{
         getMenu2(catId, currentMenu)
     }
 
+    const myFunction = () =>{
+        // x.classList.toggle("change");
+
+        setOpen(!open)
+    }
+
     useEffect(()=>{
         getMainMenu();
     }, [])
@@ -84,109 +90,55 @@ const NavBar = () =>{
             <header className='topNavBar'>
                 <a className='topHeaderLeft' href=''>Select a Store</a>
                 <div className='topHeaderMiddle'>
-                    <a href='#'>Weekly Ad</a>
-                    <a href='#'>Find a Store</a>
-                    <a href='#'>Customer Service</a>
-                    <a href='#'>Gift Cards</a>
+                    <a className='topHeaderMid' href='#'>Weekly Ad</a>
+                    <a className='topHeaderMid' href='#'>Find a Store</a>
+                    <a className='topHeaderMid' href='#'>Customer Service</a>
+                    <a className='topHeaderMid' href='#'>Gift Cards</a>
                 </div>
                 <a className='topHeaderRight' href=''>Sign in to see pricing</a>
             </header>
             <header className='bottomNavBar'>
-                <div>
+                <div className='logoContainer'>
                     <img className='NavBarLogo' src='./nex:mexLogo' ></img>
                 </div>
-                    <button onClick={()=> setOpen(!open)}>menu</button>
-                <div className='catResults'>
-                    <DropDown
-                    categories={categories}
-                    getMenu2={getMenu2}
-                    getMenu3={getMenu3}
-                    goBackMenu1={goBack1}
-                    goBackMenu2={goBack2}
-                    open={open}
-                    parentMenuName={parentMenuName}
-                    parentMenuId={parentMenuId}
-                    parentMenu={parentMenu}
-                    catId={catId}
-                    currentMenu={currentMenu}
-                    lastMenuId={lastCatId}
-                    lastMenu={lastMenu}
-                    setLastmenu={setLastMenu}
-                    setLastMenuName={setParentMenuName}
-                    />
+                <div className='menuSection'>
+                    <div className='menuButton' onClick={()=> myFunction()}>
+                        <div className='bar1'></div>
+                        <div className='bar2'></div>
+                        <div className='bar3'></div>
+                    </div>
+                    <h3>Categories</h3>
                 </div>
                 <form className='searchBar'>
                     <input type='text' placeholder='Search' className='searchInput'></input>
                     <img className='nexcomMagnify' src='#'></img>
                 </form>
-
+                <div className='menuContainer'>
+                    <div className='catResults'>
+                    <DropDown
+                    categories={categories}
+                        getMenu2={getMenu2}
+                        getMenu3={getMenu3}
+                        goBackMenu1={goBack1}
+                        goBackMenu2={goBack2}
+                        open={open}
+                        parentMenuName={parentMenuName}
+                        parentMenuId={parentMenuId}
+                        parentMenu={parentMenu}
+                        catId={catId}
+                        currentMenu={currentMenu}
+                        lastMenuId={lastCatId}
+                        lastMenu={lastMenu}
+                        setLastmenu={setLastMenu}
+                        setLastMenuName={setParentMenuName}
+                        />
+                    </div>
+                </div>
             </header>
         </div>
         </>
     )
 }
 
-
-// const setStates = (cat-id, menu-num) => {
-//     setCatId(cat-id);
-//     setMenuNum(menu-num);
-//     selectCategory(catId, menuNum);
-// };
-
-// const selectCategory = async (catid, menunum) =>{
-//     // setCatId(catid);
-//     // setMenuNum(menunum);
-//     console.log('id: ' + catid);
-//     console.log('menuNum:' + menuNum);
-//     if (menunum === ''){
-//         setMenuNum('menu1')
-//     try {
-//         const response = await fetch("http://localhost:3002/dropdown/menu1");
-//         const menuData = await response.json();
-//         //   console.log(menuData);
-//         setCat(menuData)
-//         // console.log(menuData)
-//         // setCatId(catid);
-//         // setMenuNum(menunum);
-//         //   setCatId(categories.id)
-//         } catch (err) {
-//         console.log(err.message);
-//         }
-//     } else if(menuNum === 'menu1'){
-//         try {
-//             const response = await fetch(`http://localhost:3002/dropdown/menu2/${catId}`);
-//             const catData = await response.json();
-//             // console.log(catData);
-//             setCat(catData)
-//             setCatId(catid);
-//             setMenuNum('menu2');
-//             } catch (err) {
-//             console.log(err.message);
-//             };
-//     } else if (menuNum === 'menu2'){
-//         try {
-//             const response = await fetch(`http://localhost:3002/dropdown/menu3/${catId}`);
-//             const catData = await response.json();
-//             // console.log(catData);
-//             setCat(catData);
-//             setCatId(catid);
-//             setMenuNum('menu3');
-//             } catch (err) {
-//             console.log(err.message);
-//             };
-//     }
-// };
-
-// const lastMenu = () =>{
-//     if(menuNum === 'menu3'){
-//         setMenuNum('menu2')
-//     } else if (menuNum === 'menu2'){
-//         setMenuNum('menu1')
-//     } else if (menuNum === 'menu1'){
-//         setMenuNum('menu1')
-//     };
-
-//     selectCategory(catId ,menuNum);
-// };
 
 export default NavBar;

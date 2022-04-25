@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  width: 1000px;
+  background-color: black;
+}
+
+html {
+  background-color: black;
 }
 
 .App-logo {
@@ -22,6 +28,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex-basis: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .App-link {
@@ -35,4 +44,237 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+Header{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.backContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: aliceblue;
+  position: relative;
+  flex-basis: 0;
+}
+
+.bottomMenu{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: aliceblue;
+  position: relative;
+  flex-basis: 0;
+  border-top: black solid;
+}
+
+.sale{
+  color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+.catResults{
+  width: 25%;
+
+}
+
+.menuContainer{
+  display: flex;
+    position: absolute;
+    left:0;
+    font-weight: 700;
+    padding: 10px 10px 10px 0;
+    color: #0a2240;
+    display: flex;
+    width: 500px;
+    height: calc(100vh - 150px);
+    font-size: 18px;
+    overflow: scroll;
+    z-index: 1;
+    top: 111px
+}
+
+.catResults{
+  width: 100%;
+  position: relative;
+  height: 100%;
+  top:0;
+}
+
+.menu{
+  color:#0a2240;
+  background-color: white;
+  padding: 10px;
+  font-size: x-large;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.navBarContainer{
+    z-index: 1;
+    position: fixed;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.topNavBar{
+    height: 31px;
+    background: #7ca5cb;
+    color: white;
+}
+.topHeaderLeft .topHeaderCenter .topHeaderRight{
+  color: white;
+}
+
+a.topNavBar{
+  color: white;
+
+}
+
+.topHeaderMid{
+  color: white;
+}
+
+a:hover {
+  color: gold !important;
+}
+
+.catContainer:hover{
+  color: #7ca5cb;
+}
+
+.bottomNavBar{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    height: 111px;
+    background: #0a2240;
+    display: flex;
+    align-items: center;
+
+}
+
+.topHeaderMiddle{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  color: white;
+}
+
+.topHeaderLeft{
+ display: flex;
+ width: 50%;
+ align-items: center;
+ justify-content: center;
+ color: white;
+}
+
+.topHeaderRight{
+  display: flex;
+  height: 31px;
+  width: 22%;
+  align-items: center;
+  background-color: #005494;
+  z-index: 1;
+  padding: 10px;
+  justify-content: center;
+  color: white;
+}
+
+.navBarLogo{
+  height: 20px;
+  width: 25%;
+}
+
+.logoContainer{
+  width: 25%
+}
+
+.menuSection{
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  width: 25%;
+}
+
+.catContainer {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  color: #282c34;
+  font-weight: 700;
+}
+
+.catContainer:hover{
+  color: #7ca5cb !important
+}
+
+.menuButton {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+.catContainer{
+  padding: 10px
+}
+
+.searchInput{
+  width: 75%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: 700;
+}
+
+.searchBar{
+  width: 50%;
 }
