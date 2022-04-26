@@ -86,3 +86,35 @@ app.get("/a/:index?", async (req, res) => {
   console.log(err.message);
 }
     })
+
+
+    app.get('/dropdown/menu1', (req,res)=>{
+      pool.query('SELECT * FROM menu1;')
+      .then((result)=> {
+          res.send(result.rows)})
+      .catch((err)=> console.log(err))
+    });
+    
+    app.get('/dropdown/menu2/:parent', (req,res)=>{
+      const parent = req.params.parent;
+      pool.query('SELECT * FROM menu2 WHERE parent=$1',[parent])
+      .then((result)=> {
+          res.send(result.rows)})
+      .catch((err)=> console.log(err))
+    });
+    
+    app.get('/dropdown/menu3/:parent', (req,res)=>{
+      const parent = req.params.parent;
+      pool.query('SELECT * FROM menu3 WHERE parent=$1',[parent])
+      .then((result)=> {
+          res.send(result.rows)})
+      .catch((err)=> console.log(err))
+    });
+    
+    app.get('/dropdown/test', (req,res)=>{
+      const parent = req.params.parent;
+      pool.query('SELECT * FROM menu2')
+      .then((result)=> {
+          res.send(result.rows)})
+      .catch((err)=> console.log(err))
+    });

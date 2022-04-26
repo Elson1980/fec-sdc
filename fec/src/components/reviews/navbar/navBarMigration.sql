@@ -1,13 +1,6 @@
-DROP TABLE IF EXISTS poeple;
 DROP TABLE IF EXISTS menu3;
 DROP TABLE IF EXISTS menu2;
 DROP TABLE IF EXISTS menu1;
-
-CREATE TABLE people (
-    person_id SERIAL PRIMARY KEY,
-    person_name text NOT NULL,
-    person_date date NOT NULL
-);
 
 CREATE TABLE menu1 (
     id SERIAL PRIMARY KEY,
@@ -589,4 +582,3 @@ INSERT INTO menu2 (name, parent, menuNum) VALUES ('Entertain At Home', 19, 'menu
 
 
 
-INSERT INTO people (person_name, person_date) VALUES ('Hunter', '2022-05-06');
