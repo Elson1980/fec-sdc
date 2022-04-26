@@ -4,7 +4,7 @@ import styles from "./styles/footer.module.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
-  
+
   const [legal, setLegal] = useState([]);
   const [partners, setPartners] = useState([]);
   const [service, setService] = useState([]);

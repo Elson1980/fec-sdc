@@ -1,27 +1,30 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+// import "react-tabs/style/react-tabs.css";
+import styles from "./styles/reactTabs.module.css"
 import GetProductFeature from "./getProductFeature";
 import ListShipping from "./getShipping";
 
 const GetTabs = () => {
 
   return (
-    <div className="tabs">
-        <div className="productInfoTabs tabWidth">
-            <div id="accordionTabs" className="accordion block md-flex flex-c">
+    <div className={styles.tabs}>
+        <div className={styles.productInfoTabs}>
+            <div>
                 <Tabs>
-                    <TabList>
-                        <Tab>OVERVIEW</Tab>
-                        <Tab>REVIEWS</Tab>
-                        <Tab>SHIPPING & RETURNS</Tab>
+                    <TabList  className={styles.ulTabs}>
+                        <Tab className={styles.reacttab}>OVERVIEW</Tab>
+                        <Tab className={styles.reacttab}>REVIEWS</Tab>
+                        <Tab className={styles.reacttab}>SHIPPING & RETURNS</Tab>
                     </TabList>
                     <TabPanel>
                         <GetProductFeature></GetProductFeature>
                     </TabPanel>
-                    <TabPanel className="tabPanel">
+                    <TabPanel>
                         Blank
                     </TabPanel>
-                    <TabPanel className="tabPanel"> 
+                    <TabPanel> 
                         <ListShipping></ListShipping>
                     </TabPanel>
                 </Tabs>

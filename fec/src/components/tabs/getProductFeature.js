@@ -1,4 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
+import styles from "./styles/tab.module.css"
 
 const ListFeatures = () => {
   
@@ -19,19 +20,19 @@ const ListFeatures = () => {
   }, []);
 
   return (
-    <div className="productTabs">
-          <div className="productInfo" style={{ fontWeight: "bold" }}>
+    <div className={styles.productTabs}>
+          <div className={styles.productInfo}>
             Product Information
           </div>
           <p></p>
-          <p className="productInfo"><span>
+          <p className={styles.productInfo}><span>
             These items are available only in 48 contiguous United States. For
             orders Outside the Continental United States (OCONUS) contact our
             Special Order Team at{" "}
             <a href="mailto:WhiteGlove@nexweb.org">WhiteGlove@nexweb.org</a>.
           </span>
           </p>
-          <p className="productInfo"><span>
+          <p className={styles.productInfo}><span>
             Click
             {" "}
             <a href="https://www.mynavyexchange.com/nex/customer-service/shipping-info"> here</a>
@@ -39,7 +40,7 @@ const ListFeatures = () => {
             for Shipping & Return and Customer Care Center information.
           </span>
           </p>          
-          <p className="productInfo">
+          <p className={styles.productInfo}>
             iPad Pro features the powerful Apple M1 chip for next-level
             performance and all-day battery life. An immersive 12.9-inch Liquid
             Retina XDR display for viewing and editing HDR photos and videos.
@@ -51,10 +52,10 @@ const ListFeatures = () => {
             documents, and the Magic Keyboard for a responsive typing experience
             and trackpad.
           </p>
-          <p className="productInfo">Features</p>
+          <p className={styles.productInfo}>Features</p>
           {feature.map((e) => (
-            <ul key={e.id} className="productInfo">
-              <li className="featureList">{e.feature}</li>
+            <ul key={e.id} className={styles.productInfo}>
+              <li>{e.feature}</li>
             </ul>
           ))}
       </div>  

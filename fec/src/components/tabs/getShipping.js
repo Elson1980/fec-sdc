@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "./styles/tab.module.css";
 
 const ListShipping = () => {
   return (
-    <div id="shipping" className="productTabs">
-      <div className="productShippingInfo">
-        <p className="productInfo">
+    <div id="shipping" className={styles.productTabs}>
+      <div className={styles.productShippingInfo}>
+        <p className={styles.productInfo}>
           <strong>
             myNavyExchange.com ships to all 50 United States, U.S. territories,
             and APO/FPO /DPO addresses.
@@ -13,65 +14,97 @@ const ListShipping = () => {
           We also ship OCONUS direct to select stores via DHL for faster
           delivery. For the latest update view the Ship to Store drop-down menu
           in the shipping section of the checkout process.
-        </p>  
-        <p className="productInfo">
+        </p>
+        <p className={styles.productInfo + " " + styles.textColor}>
           Please note that orders must be placed prior to 3pm ET to be processed
           and shipped that day.
         </p>
-        <p className="productInfo">          
-          <span style={{ fontWeight: "bold" }}>
-            Shipping Cost:
-          </span>
+        <p className={styles.productInfo}>
+          <span className={styles.bFont}>Shipping Cost:</span>
           <br></br>
-          <span >
+          <span>
             Shipping costs are a flat rate based on the shipping method
             selected.
           </span>
         </p>
-        <table className="shiptable">
+        <table className={styles.shiptable + " " + styles.textColor}>
           <tbody>
-            <tr bgcolor="f5f5f5">
+            <tr className={styles.bgColor}>
               <td
-                className="shipTableHeader"
-                style={{ fontWeight: "bold", textAlign: "left" }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgColor
+                }
               >
                 Shipping Method
               </td>
               <td
-                className="shipTableHeader"
-                style={{ fontWeight: "bold", textAlign: "left" }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgColor
+                }
               >
                 Continental US
               </td>
               <td
-                className="shipTableHeader"
-                style={{ fontWeight: "bold", textAlign: "left" }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgColor
+                }
               >
                 APO/FPO and US Territories
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Standard
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 $4.95<br></br>
                 <strong>FREE</strong> with Military Star Card or Purchase of
                 $49.95 or more
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 $4.95<br></br>
                 <strong>FREE</strong> with Military Star Card or Purchase of
@@ -80,73 +113,112 @@ const ListShipping = () => {
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Priority
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 $12.95
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 N/A
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Express
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 $17.95
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 N/A
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Ship to Store
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 <strong>FREE</strong>
                 <br></br> Select locations only
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 <strong>FREE</strong>
                 <br></br> Select locations only
@@ -154,10 +226,10 @@ const ListShipping = () => {
             </tr>
           </tbody>
         </table>
-        <p className="productInfo">       
-          <span style={{ fontWeight: "bold" }}>Delivery Estimates:</span>
+        <p className={styles.productInfo}>
+          <span>Delivery Estimates:</span>
           <br></br>
-          <span style={{ fontWeight: "bold" }}>
+          <span>
             United States including Military Addresses & U.S. Territories*
           </span>
           <br></br>
@@ -167,165 +239,249 @@ const ListShipping = () => {
             delivered to you.
           </span>
           <br></br>
-          <span style={{ fontSize: "10px", fontStyle: "italic" }}>
+          <span className={styles.tinySpan}>
             *Business days are Monday - Friday, excluding holidays
           </span>
         </p>
-        <table className="shiptable">
+        <table className={styles.shiptable + " " + styles.textColor}>
           <tbody>
-            <tr bgcolor="f5f5f5">
+            <tr className={styles.bgColor}>
               <td
-                className="shipTableHeader"
-                style={{ fontWeight: "bold", textAlign: "left" }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgColor
+                }
               >
                 Shipping Method
               </td>
               <td
-                className="shipTableHeader"
-                style={{ fontWeight: "bold", textAlign: "left" }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgColor
+                }
               >
                 Continental US
               </td>
               <td
-                className="shipTableHeader"
-                style={{ fontWeight: "bold", textAlign: "left" }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgColor
+                }
               >
                 APO/FPO and US Territories
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Standard
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 5 - 7 Business Days
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Up to 45 Business Days
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Priority
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 3 - 5 Business Days
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 N/A
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Express
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 1 - 2 Business Days
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 N/A
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Ship to Store CONUS
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 3 - 5 Business<br></br> Days Select locations only
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 N/A
               </td>
             </tr>
             <tr>
               <td
-                className="shipTableHeader"
-                style={{
-                  fontWeight: "bold",
-                  textAlign: "left",
-                  backgroundColor: "white",
-                }}
+                className={
+                  styles.shipTableHeader +
+                  " " +
+                  styles.bFont +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 Ship to Store OCONUS
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 N/A
               </td>
               <td
-                className="shipTableCell"
-                style={{ textAlign: "left", backgroundColor: "white" }}
+                className={
+                  styles.shipTableCell +
+                  " " +
+                  styles.aText +
+                  " " +
+                  styles.bgWhite
+                }
               >
                 7 - 10<br></br> Business Days Select Locations Only
               </td>
             </tr>
           </tbody>
         </table>
-        <p className="productInfo" style={{ fontWeight: "bold" }}>
-          Order Online & Ship-To-Store
-        </p>
-        <p className="productInfo">
+        <p className={styles.productInfo}>Order Online & Ship-To-Store</p>
+        <p className={styles.productInfo}>
           <a>myNavyExchange.com</a> is happy to offer this service to its
           customers.
         </p>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>How does it work?</strong>
         </p>
-        <ul className="shippingQuestions">
+        <ul className={styles.shippingQuestions + " " + styles.textColor}>
           <li>
             Place your order on{" "}
             <a
@@ -351,10 +507,10 @@ const ListShipping = () => {
             must bring a DOD ID and the order confirmation email.
           </li>
         </ul>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>What if I'm not available to pick up my order?</strong>
         </p>
-        <ul className="shippingQuestions">
+        <ul className={styles.shippingQuestions + " " + styles.textColor}>
           <li>
             That's OK! You can designate someone else to pick up your order
             during the checkout process.
@@ -369,10 +525,10 @@ const ListShipping = () => {
             to pick up the order.
           </li>
         </ul>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>What else should I know?</strong>
         </p>
-        <ul className="shippingQuestions">
+        <ul className={styles.shippingQuestions + " " + styles.textColor}>
           <li>
             This service is only available for select products - if you do not
             see Ship-To-Store as an option during checkout, you have items in
@@ -397,10 +553,10 @@ const ListShipping = () => {
             myNavyExchange.com mobile site.
           </li>
         </ul>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>Surcharges</strong>
         </p>
-        <ul className="shippingQuestions">
+        <ul className={styles.shippingQuestions + " " + styles.textColor}>
           <li>
             A $45 surcharge is applied for items deemed by carrier as over
             weight or over sized
@@ -414,10 +570,10 @@ const ListShipping = () => {
             special purchasing offers.
           </li>
         </ul>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>Other Shipping Notes</strong>
         </p>
-        <ul className="shippingQuestions">
+        <ul className={styles.shippingQuestions + " " + styles.textColor}>
           <li>
             Items identified as HAZMAT by carrier (including fragrances) may
             only be shipped by ground and CANNOT be shipped to APO/FPO/DPO
@@ -429,10 +585,10 @@ const ListShipping = () => {
             territories, NOT to APO/FPO/DPO addresses.
           </li>
         </ul>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>Shipping Method:</strong>
         </p>
-        <ul className="shippingQuestions">
+        <ul className={styles.shippingQuestions + " " + styles.textColor}>
           <li>
             We currently use Federal Express, DHL, and the U.S. Postal Service
             as our shipping providers.
@@ -446,10 +602,10 @@ const ListShipping = () => {
             delivery only (USPS Priority)
           </li>
         </ul>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>Returns</strong>
         </p>
-        <ul className="shippingQuestions">
+        <ul className={styles.shippingQuestions + " " + styles.textColor}>
           <li>Free returns to any NEX store - Fast and Easy!</li>
           <li>
             Mail it back to myNavyExchange.com – simply use the prepaid return
@@ -467,10 +623,10 @@ const ListShipping = () => {
           </li>
           <li>Gift Cards may neither be returned nor redeemed for cash.</li>
         </ul>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           <strong>Questions?</strong>
         </p>
-        <p className="shippingQuestions">
+        <p className={styles.shippingQuestions + " " + styles.textColor}>
           Your NEX Customer Service Representatives are available to help 24/7.
           If you have any questions about our shipping policies or need
           assistance with an order, please contact us by phone from the U.S. at
