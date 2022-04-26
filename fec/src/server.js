@@ -64,7 +64,7 @@ app.use(express.json());
 //   }
 // });
 
-app.get("/:features", async (req, res) => {
+app.get("/features/:id?", async (req, res) => {
   const { id } = req.params;
   try {
     if (id !== undefined) {
@@ -75,6 +75,63 @@ app.get("/:features", async (req, res) => {
       res.json(productFeatures.rows);
     } else {
       let allFeatures = await pool.query("SELECT * FROM features");
+      res.json(allFeatures.rows);
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+//Get Legal Name
+app.get("/legal/:id?", async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (id !== undefined) {
+      let legalName = await pool.query("SELECT * FROM legal WHERE id = $1", [id]);
+
+      console.log(id)
+      console.log(legalName.rows)
+      res.json(legalName.rows);
+    } else {
+      let allNames = await pool.query("SELECT * FROM legal");
+      res.json(allNames.rows);
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+// Get ourPartner Name
+app.get("/partner/:id?", async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (id !== undefined) {
+      let partnerName = await pool.query("SELECT * FROM ourpartners WHERE id = $1", [id]);
+
+      console.log(id)
+      console.log(partnerName.rows)
+      res.json(partnerName.rows);
+    } else {
+      let allFeatures = await pool.query("SELECT * FROM ourpartners");
+      res.json(allFeatures.rows);
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+// Get customerService Name
+app.get("/service/:id?", async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (id !== undefined) {
+      let customerService = await pool.query("SELECT * FROM customerservice WHERE id = $1", [id]);
+
+      console.log(id)
+      console.log(customerService.rows)
+      res.json(customerService.rows);
+    } else {
+      let allFeatures = await pool.query("SELECT * FROM customerservice");
       res.json(allFeatures.rows);
     }
   } catch (err) {

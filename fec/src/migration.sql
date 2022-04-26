@@ -1,6 +1,9 @@
 DROP TABLE IF EXISTS people;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS features;
+DROP TABLE IF EXISTS legal;
+DROP TABLE IF EXISTS ourpartners;
+DROP TABLE IF EXISTS customerservice;
 
 CREATE TABLE product (
     id SERIAL PRIMARY KEY,
@@ -14,6 +17,25 @@ CREATE TABLE features (
     product_id INTEGER,    
     FOREIGN KEY(product_id) REFERENCES product(id) ON DELETE CASCADE
 );
+
+CREATE TABLE legal (
+    id SERIAL PRIMARY KEY,
+    name text NOT NULL,    
+    url text NOT NULL
+);
+
+CREATE TABLE ourpartners (
+    id SERIAL PRIMARY KEY,
+    name text NOT NULL,    
+    url text NOT NULL
+);
+
+CREATE TABLE customerservice (
+    id SERIAL PRIMARY KEY,
+    name text NOT NULL,    
+    url text NOT NULL
+);
+
 
 -- CREATE TABLE shipping (
 --     id SERIAL PRIMARY KEY,
@@ -71,3 +93,32 @@ INSERT INTO features (feature, product_id) VALUES
 -- ('Ship to Store', 'Free Select Locations Only', 'Free Select Locations Only', 'N/A', 'N/A', 1),
 -- ('Ship to Store CONUS', 'N/A', 'N/A', '3 - 5 Business Days Select locations only.', 'N/A', 1),
 -- ('Ship to Store OCONUS', 'N/A', 'N/A', 'N/A', '7 - 10 Business Days Select locations only', 1);
+
+INSERT INTO legal (name, url) VALUES 
+('Site Map', 'https://www.mynavyexchange.com/nex/sitemap'),
+('Privacy Policy', 'https://www.mynavyexchange.com/nex/privacy'),
+('Contact Us', 'https://www.mynavyexchange.com/customerservice/contactUs.jsp'),
+('508 Compliance', 'https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx'),
+('FOIA', 'https://www.foiaonline.gov/foiaonline/action/public/request'),
+('No Fear Act', 'https://www.secnav.navy.mil/donhr/Site/Pages/No-Fear-Act.aspx#');
+
+
+
+INSERT INTO ourpartners (name, url) VALUES 
+('Navy.com', 'https://www.navy.com/'),
+('Navy.mil', 'https://www.navy.mil/'),
+('NAVSUP', 'https://www.navsup.navy.mil/public/navsup/home'),
+('Navy Lodge', 'https://www.navy-lodge.com"'),
+('Navy Gateway Inns & Suites', 'https://www.mynavyexchange.com/nex/enterprise-info/our-seven-business-lines/ngis'),
+('Military Star Card', 'https://www.myecp.com/CustomerAds/Page/Navy'),
+('Network Solutions', 'https://seals.networksolutions.com/siteseal_seek/steseal?v_shortname=NETSB&v_querytype=W&v_search=www.mynavyexchange.com&x=5&y=5'),
+('USA.gov', 'https://www.usa.gov/');
+
+
+INSERT INTO customerservice (name, url) VALUES 
+('Work For Us', 'https://www.mynavyexchange.com/nex/work-for-us'),
+('Doing Business With Us', 'https://www.mynavyexchange.com/nex/doing-business-with-us'),
+('NEXt Level Rewards', 'https://www.mynavyexchange.com/NEXtLevelRewards'),
+('Take A Survey', 'https://www.mynavyexchange.com/take-a-survey'),
+('FAQ', 'https://www.mynavyexchange.com/nex/faqs"'),
+('NEXCOM Enterprise Information', 'https://www.mynavyexchange.com/nex/enterprise-info');
