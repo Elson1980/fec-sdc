@@ -118,57 +118,286 @@ INSERT INTO menu2 (name, parent, menuNum) VALUES ('Public Health Service', 1, 'm
 INSERT INTO menu1 (name, menuNum) VALUES ('Mens', 'menu1');
 
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Apparel', 2, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Tops', 11, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Bottoms', 11, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Activewear', 11, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Basics', 11, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Jackets & Coats', 11, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Loungewear & Sleepwear', 11, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Swimwear', 11, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Shoes', 2, 'menu2');
+
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Athletic Shoes', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Casual Shoes', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Sandles', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Hiking and Outdoor Shoes', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Casual Sneakers', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Boots', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Athletic Slip On Shoes', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Slippers', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Dress Shoes', 12, 'menu3');
+INSERT INTO Menu3 (name, parent, menuNum) VALUES ('Mens Tactical & Work Shoes', 12, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Watches', 2, 'menu2');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Sunglasses', 2, 'menu2');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Jewelry', 2, 'menu2');
 
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Rings', 15, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Bracelets', 15, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Necklaces', 15, 'menu3');
 
 
 INSERT INTO menu1 (name, menuNum) VALUES ('Womens', 'menu1');
 
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Apparel', 3, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Tops', 16, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Bottoms', 16, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Intimate Apparel', 16, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Activewear', 16, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Pajamas & Activewear', 16, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Maternity', 16, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Jackets & Coats', 16, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Swimwear', 16, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Shoes', 3, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Athletic Shoes', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Sandles', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Sneakers', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Slippers', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Flats', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Boots', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Hiking and Outdoor Shoes', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Atletic Shoes', 17, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Heels & Pumps', 17, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Handbags', 3, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Wallets & Wristlets', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Crossbody & Messenger Bags', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Totes', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Fashion Backpacks', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Satchels', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Travel Bags', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Shoulder Bags', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Bucket & Hobo Bags', 18, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Belt Bags', 18, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Jewelry', 3, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Fashion Jewelry', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Fine Jewelry', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Necklaces', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Earrings', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Rings', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Diamond & Bridal Fine Jewelry', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Braclets', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Jewelry', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Jewelry', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Jewelry Sets', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('jewelry Boxes', 19, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Anklets', 19, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Watches', 3, 'menu2');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Sunglassess', 3, 'menu2');
 
 
 INSERT INTO menu1 (name, menuNum) VALUES ('Kids', 'menu1');
 
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Apparel', 4, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Girls Clothing', 22, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Boys Clothing', 22, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Activewear', 22, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Swimwear', 22, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Sleepwear', 22, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Outerwear', 22, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Basics', 22, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Shoes', 4, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Boys Shoes', 23, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Girls Shoes', 23, 'menu3');
 
 
 INSERT INTO menu1 (name, menuNum) VALUES ('Baby', 'menu1');
 
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Baby Apparel', 5, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Girls Clothing', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Boys Clothing', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Accessories', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Jackets & Outerwear', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Sleepwear', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Neutral Baby Clothing', 24, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Baby Gifts & Shower Favorites', 5, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Shower Gifts', 25, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Registry Favorites', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Blankets', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Early Learning', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Jewelry', 24, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Stroller & Car Seat Toys', 24, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Baby Proofing & Safety', 5, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Proofing', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Gates', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Step Stools', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Shopping Cart Covers', 26, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Essentials', 5, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Bedding & Decor', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Nursing & Feeding', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Diapering & Potty', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Diaper & Storage Bags', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Proofing & Safety', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Pacifiers, Rattles, Teething & Paci Accessories', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Bathing', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Toiletries', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Grooming & First Aid', 27, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Swaddles & Wearable Blankets', 27, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Furniture', 5, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Furniture', 28, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Cribs', 28, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Dressers, Changers & Storage', 28, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Conversion Kits', 28, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Bassinets & Portable  Beds', 28, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Toddler Beds', 28, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mattresses', 28, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Gliders & Recliners', 28, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Gear', 5, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Activity Gear & Toys', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Strollers', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Car Seats', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Diaper and Storage Bags', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Playards & Portable Beds', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('High Chairs', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Baby Monitors & Soothers', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Travel Solutions', 29, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Carriers', 29, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Maternity Apparel', 5, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Maternity Tops', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Maternity Bottoms', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Maternity Bras', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Maternity Dressers, Jumpsuits, Rompers', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Maternity Panties', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Maternity Accessories', 26, 'menu3');
 
 
 INSERT INTO menu1 (name, menuNum) VALUES ('Accessories', 'menu1');
 
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Handbags', 6, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Wallets & Wristlets', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Crossbody & Messanger Bags', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Totes', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Fashion Backpacks', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Satchels', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Travel Bags', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Shoulder Bags', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Bucket & Hobo Bags', 31, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Belt Bags', 31, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Jewelry', 6, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Fashion Jewelry', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Fine Jewelry', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Necklaces', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Earrings', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Rings', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Diamond & Bridal Fine Jewelry', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Braclets', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Jewelry', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Jewelry', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Jewelry Sales', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Jewelry Boxes', 32, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Anklets', 32, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Watches', 6, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Watches', 33, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Watches', 33, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Smartwatches', 33, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Watches & Clocks', 33, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Accessories', 33, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Sunglasses', 6, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Sunglasses', 34, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Sunglasses', 34, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Unisex Sunglasses', 34, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Sunglasses Cases & Accessories', 34, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Sunglasses', 34, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Backpacks', 6, 'menu2');
+
+INSERT INTO menu2 (name, parent, menuNum) VALUES ('Kids Backpacks', 35, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Face Masks', 6, 'menu2');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Hats', 6, 'menu2');
-INSERT INTO menu2 (name, parent, menuNum) VALUES ('Belts', 6, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Hats & Beanies', 37, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Hats & Beanies', 37, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens hats & Beanies', 37, 'menu3');
+
+INSERT INTO menu2 (name, parent, menuNum) VALUES ('Belts', 6, 'menu2'); 
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Mens Accessories', 6, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Hats & Beanies', 39, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Belts', 39, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Wallets', 39, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Cold Weather Accessories', 39, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Gifts', 39, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Bags & Backpacks', 39, 'menu3');
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Cold Weather Accessories', 6, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Womens Cold Weather Accessories', 40, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Kids Cold Weather Accessories', 40, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Cold Weather Accessories', 40, 'menu3');
 
 
 INSERT INTO menu1 (name, menuNum) VALUES ('Shoes', 'menu1');
 
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Mens Shoes', 7, 'menu2');
+
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Athletic Shoes', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Casual Shoes', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Sandles', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Hiking and Outdoor Shoes', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Casual Sneakers', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Boots', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Athletic Slides', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Slip On Shoes', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Slippers', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Dress Shoes', 26, 'menu3');
+INSERT INTO menu3 (name, parent, menuNum) VALUES ('Mens Tactical & Work Shoes', 26, 'menu3');
+
+
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Womens Shoes', 7, 'menu2');
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Kids Shoes', 7, 'menu2');
 INSERT INTO menu2 (name, parent, menuNum) VALUES ('Boys Shoes', 7, 'menu2');

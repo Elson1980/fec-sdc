@@ -58,7 +58,7 @@ const NavBar = () =>{
     const goBack1 = (lastMenu, lastCatId, lastMenuName) =>{
         setCatId(lastCatId);
         setMenu(lastMenu);
-        setParentMenuName(lastMenuName)
+        // setParentMenuName(lastMenuName)
         console.log('lastMenu:' , lastMenu)
         console.log('goBack: lastMenuName: ', lastMenuName)
         getMainMenu();
