@@ -18,7 +18,7 @@ const ReviewBody = () => {
     const getReviews = async () => {
       try {
         console.log('attempting database fetch')
-        const response = await fetch(`http://localhost:3001/`);
+        const response = await fetch(`http://localhost:3002/`);
         const jsonData = await response.json();
         setPlace(jsonData.length)
        
@@ -69,7 +69,7 @@ const ReviewBody = () => {
       console.log(index, 'i at 105')
       
       
-      const response = await fetch(`http://localhost:3001/${index}`);
+      const response = await fetch(`http://localhost:3002/${index}`);
       const jsonData = await response.json();
         
       setItems(jsonData);
@@ -152,7 +152,7 @@ const ReviewBody = () => {
         <div>Active Filters</div>
       </div>
       <div className="activeFilters">
-        <button style={{ "background-color": "royalblue", color: "white" }}>
+        <button style={{ "backgroundColor": "royalblue", color: "white" }}>
           5 stars
         </button>
         <button>Clear Alls</button>
