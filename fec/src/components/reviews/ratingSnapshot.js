@@ -92,7 +92,7 @@ const clickTest = () => {
           Rating Snapshot
           <div>
             <div>Select a row below to filter reviews</div>
-            <div class="rating">
+            <div className="rating">
               <div>
                 <div>5★</div>
                 <div>

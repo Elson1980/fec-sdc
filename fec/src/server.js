@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const pool = require("./router");
+const pool = require("./components/reviews/router");
 
 app.use(cors());
 app.use(express.json());
@@ -66,9 +66,6 @@ app.delete("/:index", async (req, res) => {
   }
 })
 
-app.listen(3001, () => {
-  console.log("server started on 3001");
-});
 
 
 app.get("/a/:index?", async (req, res) => {
@@ -78,28 +75,28 @@ app.get("/a/:index?", async (req, res) => {
       let singleReview = await pool.query("SELECT author_name FROM author WHERE author_id = $1" , [
         req.params.index
       ]);
-    
+      
       res.json(singleReview.rows);
     }
-  
-} catch (err) {
-  console.log(err.message);
-}
-    })
-
-
-    app.get('/dropdown/menu1', (req,res)=>{
-      pool.query('SELECT * FROM menu1;')
-      .then((result)=> {
-          res.send(result.rows)})
-      .catch((err)=> console.log(err))
-    });
     
-    app.get('/dropdown/menu2/:parent', (req,res)=>{
-      const parent = req.params.parent;
-      pool.query('SELECT * FROM menu2 WHERE parent=$1',[parent])
-      .then((result)=> {
-          res.send(result.rows)})
+  } catch (err) {
+    console.log(err.message);
+  }
+})
+
+
+app.get('/dropdown/menu1', (req,res)=>{
+  pool.query('SELECT * FROM menu1;')
+  .then((result)=> {
+    res.send(result.rows)})
+    .catch((err)=> console.log(err))
+  });
+  
+  app.get('/dropdown/menu2/:parent', (req,res)=>{
+    const parent = req.params.parent;
+    pool.query('SELECT * FROM menu2 WHERE parent=$1',[parent])
+    .then((result)=> {
+      res.send(result.rows)})
       .catch((err)=> console.log(err))
     });
     
@@ -107,14 +104,19 @@ app.get("/a/:index?", async (req, res) => {
       const parent = req.params.parent;
       pool.query('SELECT * FROM menu3 WHERE parent=$1',[parent])
       .then((result)=> {
+        res.send(result.rows)})
+        .catch((err)=> console.log(err))
+      });
+      
+      app.get('/dropdown/test', (req,res)=>{
+        const parent = req.params.parent;
+        pool.query('SELECT * FROM menu2')
+        .then((result)=> {
           res.send(result.rows)})
-      .catch((err)=> console.log(err))
-    });
-    
-    app.get('/dropdown/test', (req,res)=>{
-      const parent = req.params.parent;
-      pool.query('SELECT * FROM menu2')
-      .then((result)=> {
-          res.send(result.rows)})
-      .catch((err)=> console.log(err))
-    });
+          .catch((err)=> console.log(err))
+        });
+        
+        
+        app.listen(3002, () => {
+          console.log("server started on 3002");
+        });

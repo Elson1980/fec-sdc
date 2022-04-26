@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import "/Users/hunteralbert/Desktop/FEC/fec/src/App.css";
+// import "/Users/hunteralbert/Desktop/FEC/fec/src/App.css";
 import { Col, Row, Progress } from "reactstrap";
 import RatingSnapshot from "./ratingSnapshot";
 import ReviewBody from "./reviewBody";

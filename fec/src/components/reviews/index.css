@@ -1,11 +1,18 @@
-body {
+/* body {
   padding: 10rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+.reviews{
+  flex-basis: auto;
+  flex-shrink: 0;
+  position: relative;
+  top: 142px;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -24,6 +31,7 @@ code {
 
   list-style: none;
 }
+
 .reviewCounter {
   width:           90%; 
   display:         flex;
@@ -38,9 +46,11 @@ code {
   list-style: none;
   background-color: #e6e3e3;
 }
+
 .filter{
   margin-left: 10%;
 }
+
 ul {
   width:           100%; 
   display:         flex;
@@ -297,58 +307,10 @@ flex-direction: row;
   color: #f8ce0b;
 }
 
-.App {
-  text-align: center;
-  width: 1000px;
-  background-color: black;
-}
 
-html {
-  background-color: black;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  flex-basis: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-Header{
-  display: flex;
-  justify-content: space-evenly;
-}
 
 .backContainer{
   display: flex;
@@ -440,6 +402,7 @@ Header{
     height: 31px;
     background: #7ca5cb;
     color: white;
+    display: flex;
 }
 .topHeaderLeft .topHeaderCenter .topHeaderRight{
   color: white;

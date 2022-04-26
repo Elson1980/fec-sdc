@@ -1,7 +1,4 @@
-import logo from './logo.svg';
 import React, {Fragment} from 'react';
-import './App.css';
-import ListItem from './getData';
 import NavBar from './components/reviews/navbar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Reviews from "./components/reviews/reviews.js";
@@ -13,11 +10,17 @@ console.log('start')
 function App() {
   
   return (
-    <div className="App">
-      <NavBar/>
-      
-      <Reviews/>
-    </div>
+    <>
+      <div className="App">
+        <div className='navBar'>
+          <NavBar/>
+        </div>
+        <div className='reviews'>
+        <Reviews/>
+        </div>
+      </div>
+    
+    </>
   );
 }
 

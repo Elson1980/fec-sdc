@@ -9,7 +9,8 @@ CREATE TABLE author (
     author_name text NOT NULL,
     PRIMARY KEY(author_id)
     
-);
+)
+
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
     author_r_name text,
