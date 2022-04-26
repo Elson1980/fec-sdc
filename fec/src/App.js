@@ -11,6 +11,10 @@ import {
   useRecoilValue,
 } from "recoil";
 
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import GetTabs from './components/tabs/tabs';
+import Footer from './components/tabs/footer';
 
 
 console.log('start')
@@ -26,8 +30,10 @@ function App() {
         </div>
         <Products />
         <div className='reviews'>
-        <Reviews/>
+        <GetTabs>
+        </GetTabs> 
         </div>
+        <Footer/>
       </div>
     </RecoilRoot>
     
