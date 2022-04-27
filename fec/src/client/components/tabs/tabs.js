@@ -5,7 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import styles from "./styles/reactTabs.module.css"
 import GetProductFeature from "./getProductFeature";
 import ListShipping from "./getShipping";
-import Reviews from "../../reviews.js";
+import Reviews from "./../reviews/reviews.js";
 
 const GetTabs = () => {
 

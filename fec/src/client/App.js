@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react';
-import NavBar from './components/reviews/navbar/NavBar';
+import NavBar from './components/navbar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Reviews from "./reviews.js";
-import Products from "./Products";
+import Products from "./components/product/Products";
 import {
   RecoilRoot,
   atom,
