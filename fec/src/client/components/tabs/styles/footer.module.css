@@ -114,13 +114,6 @@ p:not(:first-child) {
   }
 }
 
-/* @media (min-width: 1200px) {
-  .mdsocial1 {
-    flex: 16%;
-    max-width: 16%;
-  }
-} */
-
 @media (min-width: 992px) {
   .colbc {
     flex: 50%;

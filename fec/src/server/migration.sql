@@ -1,8 +1,17 @@
--- navBar
 
 DROP TABLE IF EXISTS menu3;
 DROP TABLE IF EXISTS menu2;
 DROP TABLE IF EXISTS menu1;
+DROP TABLE IF EXISTS product CASCADE;
+DROP TABLE IF EXISTS sku CASCADE;
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS author;
+DROP TABLE IF EXISTS people;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS features;
+DROP TABLE IF EXISTS legal;
+DROP TABLE IF EXISTS ourpartners;
+DROP TABLE IF EXISTS customerservice;
 
 CREATE TABLE menu1 (
     id SERIAL PRIMARY KEY,
@@ -573,11 +582,6 @@ INSERT INTO menu2 (name, parent, menuNum) VALUES ('Entertain At Home', 19, 'menu
 
 
 
--- product
-
-DROP TABLE IF EXISTS product CASCADE;
-DROP TABLE IF EXISTS sku CASCADE;
-
 
 CREATE TABLE product (
     id SERIAL PRIMARY KEY,
@@ -630,23 +634,6 @@ VALUES
     );
 
 
-
--- tabs
-
-DROP TABLE IF EXISTS people;
-DROP TABLE IF EXISTS product;
-DROP TABLE IF EXISTS features;
-DROP TABLE IF EXISTS legal;
-DROP TABLE IF EXISTS ourpartners;
-DROP TABLE IF EXISTS customerservice;
-
-
-CREATE TABLE product (
-    id SERIAL PRIMARY KEY,
-    product_name text NOT NULL
-);
-
-
 CREATE TABLE features (
     id SERIAL PRIMARY KEY,
     feature text NOT NULL,
@@ -654,13 +641,11 @@ CREATE TABLE features (
     FOREIGN KEY(product_id) REFERENCES product(id) ON DELETE CASCADE
 );
 
-
 CREATE TABLE legal (
     id SERIAL PRIMARY KEY,
     name text NOT NULL,    
     url text NOT NULL
 );
-
 
 CREATE TABLE ourpartners (
     id SERIAL PRIMARY KEY,
@@ -668,27 +653,11 @@ CREATE TABLE ourpartners (
     url text NOT NULL
 );
 
-
 CREATE TABLE customerservice (
     id SERIAL PRIMARY KEY,
     name text NOT NULL,    
     url text NOT NULL
 );
-
-
--- CREATE TABLE shipping (
---     id SERIAL PRIMARY KEY,
---     method text NOT NULL,
---     conusCost text NOT NULL,
---     oconusCost text NOT NULL,
---     conusDelivery text NOT NULL,
---     oconusDelivery text NOT NULL,
---     product_id INTEGER,    
---     FOREIGN KEY(product_id) REFERENCES product(id) ON DELETE CASCADE
--- );
-
-
-INSERT INTO product (product_name) VALUES ('Ipad');
 
 INSERT INTO features (feature, product_id) VALUES 
 ('Apple M1 chip for next-level performance', 1),
@@ -726,16 +695,6 @@ INSERT INTO features (feature, product_id) VALUES
 ('Product Weight: 24.1 ounces', 1),
 ('Model Number MHNG3LL/A', 1);
 
-
--- INSERT INTO shipping (method, conusCost, oconusCost, conusDelivery, oconusDelivery, product_id) VALUES 
--- ('Standard', '$4.95 FREE with Military Star Card of Purchase of $49.95 or more', '$$4.95 FREE with Military Star Card of Purchase of $49.95 or more', '5 - 7 Business Days', 'Up to 45 Business Days' 1),
--- ('Priority', '$12.95', 'N/A', '3 - 5 Business Days', 'N/A' 1),
--- ('Express', '$17.95', 'N/A', '1 - 2 Business Days', 'N/A'  1),
--- ('Ship to Store', 'Free Select Locations Only', 'Free Select Locations Only', 'N/A', 'N/A', 1),
--- ('Ship to Store CONUS', 'N/A', 'N/A', '3 - 5 Business Days Select locations only.', 'N/A', 1),
--- ('Ship to Store OCONUS', 'N/A', 'N/A', 'N/A', '7 - 10 Business Days Select locations only', 1);
-
-
 INSERT INTO legal (name, url) VALUES 
 ('Site Map', 'https://www.mynavyexchange.com/nex/sitemap'),
 ('Privacy Policy', 'https://www.mynavyexchange.com/nex/privacy'),
@@ -765,21 +724,12 @@ INSERT INTO customerservice (name, url) VALUES
 ('NEXCOM Enterprise Information', 'https://www.mynavyexchange.com/nex/enterprise-info');
 
 
-
--- reviews
-
-DROP TABLE IF EXISTS reviews;
-DROP TABLE IF EXISTS author;
-
-
 CREATE TABLE author (
     author_id SERIAL,
-
     author_name text NOT NULL,
     PRIMARY KEY(author_id)
     
 );
-
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
