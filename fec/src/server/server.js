@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
       }
     });
 
-//routes for the server
+
 app.post("/", async (req, res) => {
   console.log(req.body)
   try {
@@ -85,7 +85,6 @@ app.get("/product/1/sku/:id?", async (req, res) => {
   }
 })
 
-//Get Legal Name
 app.get("/legal/:id?", async (req, res) => {
   const { id } = req.params;
   try {
@@ -127,8 +126,7 @@ app.put("/:index", async (req, res) => {
     }
   } 
 })
-    
-// Get ourPartner Name
+
 app.get("/partner/:id?", async (req, res) => {
   const { id } = req.params;
   try {
@@ -147,7 +145,6 @@ app.get("/partner/:id?", async (req, res) => {
   }
 });
 
-// Get customerService Name
 app.get("/service/:id?", async (req, res) => {
   const { id } = req.params;
   try {
@@ -165,7 +162,6 @@ app.get("/service/:id?", async (req, res) => {
     console.log(err.message);
   }
 });
-
 
 app.get('/dropdown/menu1', (req,res)=>{
   pool.query('SELECT * FROM menu1;')
@@ -217,7 +213,4 @@ app.get("/:index?", async (req, res) => {
   }
 });
 
-
-app.listen(3002, () => {
-console.log("server started on 3002");
-});
+app.listen(process.env.PORT, () => console.log(`server started on ${PORT}`));
